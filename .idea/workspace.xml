@@ -1,15 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" name="Default" comment="" />
+    <list default="true" id="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jab/NodesList.form" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jab/NodesList.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/smack.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/jivesoftware_smack_3_2_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/jivesoftware_smackx_3_2_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/org_igniterealtime_smack_smackx_debug_3_2_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/org_igniterealtime_smack_smackx_jingle_3_2_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/smack-3.2.1-sources.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/smack-3.2.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/smackx-3.2.1-sources.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/smackx-3.2.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/smackx-debug-3.2.1-javadoc.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/smackx-debug-3.2.1-sources.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/smackx-debug-3.2.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/smackx-jingle-3.2.1-javadoc.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/smackx-jingle-3.2.1-sources.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/smackx-jingle-3.2.1.jar" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/juuu.iml" afterPath="$PROJECT_DIR$/vgf.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/jab/MainForm.java" afterPath="$PROJECT_DIR$/src/jab/LoginForm.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/jab/fMain.form" afterPath="$PROJECT_DIR$/src/jab/fLogin.form" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jab/JabberClient.java" afterPath="$PROJECT_DIR$/src/jab/JabberClient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="juuu.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/JabberSmackAPI.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1375788113911" ignored="false" />
-    <file path="/Main.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1375791470675" ignored="false" />
-    <file path="/fragment.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1375789419080" ignored="false" />
+    <file path="/Main.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1376030884384" ignored="false" />
+    <file path="/fragment.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1376028804180" ignored="false" />
     <file path="/Processor.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1375790847722" ignored="false" />
-    <file path="/Dummy.txt" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1375792925706" ignored="false" />
+    <file path="/Dummy.txt" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1376028288270" ignored="false" />
     <file path="/MainForm.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1375794653006" ignored="false" />
+    <file path="/LoginForm.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1376033720837" ignored="false" />
+    <file path="/JabberClient.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1376038470840" ignored="false" />
+    <file path="/NodesList.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1376043493034" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +53,8 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <line_breakpoints>
-      <breakpoint url="file://$PROJECT_DIR$/src/jab/MainForm.java" line="28" class="jab.MainForm$1" package="jab">
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/src/jab/NodesList.java" line="72" class="jab.NodesList$2" package="jab">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -41,7 +70,8 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </line_breakpoints>
-    <breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
         <option name="NOTIFY_UNCAUGHT" value="true" />
@@ -85,7 +115,97 @@
     <favorites_list name="juuu" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="LoginForm.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/jab/LoginForm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="0" selection-start="781" selection-end="781" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#572#1849#0" expanded="true" />
+                <element signature="e#1838#1839#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JabberClient.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/jab/JabberClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="92" column="8" selection-start="2955" selection-end="2955" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NodesList.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/jab/NodesList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="142" column="59" selection-start="5460" selection-end="5460" vertical-scroll-proportion="2.7221375">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#836#2165#0" expanded="true" />
+                <element signature="e#2154#2155#0" expanded="true" />
+                <element signature="e#2202#3078#0" expanded="true" />
+                <element signature="e#3067#3068#0" expanded="true" />
+                <element signature="e#3121#3477#0" expanded="true" />
+                <element signature="e#3466#3467#0" expanded="true" />
+                <element signature="e#3520#4404#0" expanded="true" />
+                <element signature="e#3974#3982#0" expanded="true" />
+                <element signature="e#4393#4394#0" expanded="true" />
+                <element signature="e#4444#4900#0" expanded="true" />
+                <element signature="e#4889#4890#0" expanded="true" />
+                <element signature="e#5057#5251#0" expanded="true" />
+                <element signature="e#5240#5241#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PubSubManager.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/../smack_3_3_0/smackx.jar!/org/jivesoftware/smackx/pubsub/PubSubManager.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="62" selection-start="1123" selection-end="1123" vertical-scroll-proportion="-7.52">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConfigureForm.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/../smack_3_3_0/smackx.jar!/org/jivesoftware/smackx/pubsub/ConfigureForm.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="103" column="16" selection-start="4294" selection-end="4294" vertical-scroll-proportion="-10.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Node.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/../smack_3_3_0/smackx.jar!/org/jivesoftware/smackx/pubsub/Node.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="20" selection-start="1277" selection-end="1281" vertical-scroll-proportion="-3.44">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NodesList.form" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/jab/NodesList.form">
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fLogin.form" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/jab/fLogin.form">
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -105,18 +225,37 @@
       <list>
         <option value="$PROJECT_DIR$/src/jab/JabberSmackAPI.java" />
         <option value="$PROJECT_DIR$/src/jab/Processor.java" />
-        <option value="$PROJECT_DIR$/src/jab/JabberClient.java" />
         <option value="$PROJECT_DIR$/src/jab/fMain.form" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/jab/MainForm.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/jab/LoginForm.java" />
+        <option value="$PROJECT_DIR$/src/jab/fLogin.form" />
+        <option value="$PROJECT_DIR$/src/jab/JabberClient.java" />
+        <option value="$PROJECT_DIR$/src/jab/NodesList.form" />
+        <option value="$PROJECT_DIR$/src/jab/NodesList.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
     <option name="y" value="27" />
-    <option name="width" value="1922" />
-    <option name="height" value="1054" />
+    <option name="width" value="1920" />
+    <option name="height" value="1053" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Abstraction issues</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -125,7 +264,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
@@ -145,6 +284,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -199,7 +339,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MainForm" />
+              <option name="myItemId" value="NodesList" />
+              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="juuu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="juuu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jab" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LoginForm" />
               <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -223,7 +385,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -231,19 +392,23 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="Repository.Attach.JavaDocs" value="true" />
+    <property name="options.lastSelected" value="project.propCompiler" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../smack_3_3_0/smackx.jar!/" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="Repository.Attach.Sources" value="true" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="Downloaded.Files.Path" value="$PROJECT_DIR$/lib" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
@@ -257,7 +422,7 @@
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="juuu" />
+      <module name="vgf" />
       <envs />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="" />
@@ -320,29 +485,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="27" width="1922" height="1054" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.7549889" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.7549889" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18516542" sideWeight="0.6707317" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6707317" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29402348" sideWeight="0.6707317" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24501109" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24501109" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2470651" sideWeight="0.7549889" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2470651" sideWeight="0.6707317" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3991131" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
     </layout>
   </component>
@@ -411,31 +576,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/jab/fMain.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jab/MainForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="52" selection-start="1000" selection-end="1000" vertical-scroll-proportion="0.7557252">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#544#1422#0" expanded="true" />
-            <element signature="e#1411#1412#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jab/JabberClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="26" selection-start="2125" selection-end="2125" vertical-scroll-proportion="0.2946565">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jab/Processor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="26" selection-start="916" selection-end="916" vertical-scroll-proportion="0.5236641">
@@ -446,11 +586,105 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vgf.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="18" selection-start="793" selection-end="793" vertical-scroll-proportion="0.41450778">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="321" selection-end="366" vertical-scroll-proportion="0.32061067">
+        <state line="34" column="25" selection-start="1170" selection-end="1170" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jab/fLogin.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../smack_3_3_0/smackx.jar!/org/jivesoftware/smackx/pubsub/Node.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="20" selection-start="1277" selection-end="1281" vertical-scroll-proportion="-3.44">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../smack_3_3_0/smackx.jar!/org/jivesoftware/smackx/pubsub/ConfigureForm.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="16" selection-start="4294" selection-end="4294" vertical-scroll-proportion="-10.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jab/JabberClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="8" selection-start="2955" selection-end="2955" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jab/LoginForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="0" selection-start="781" selection-end="781" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#572#1849#0" expanded="true" />
+            <element signature="e#1838#1839#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../smack_3_3_0/smackx.jar!/org/jivesoftware/smackx/pubsub/PubSubManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="62" selection-start="1123" selection-end="1123" vertical-scroll-proportion="-7.52">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.7.0-openjdk-i386/jre/lib/rt.jar!/java/util/Iterator.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="17" selection-start="156" selection-end="156" vertical-scroll-proportion="0.12953368">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../smack_3_3_0/smackx.jar!/org/jivesoftware/smackx/packet/DiscoverItems.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="25" selection-start="768" selection-end="768" vertical-scroll-proportion="0.1696751">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jab/NodesList.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jab/NodesList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="142" column="59" selection-start="5460" selection-end="5460" vertical-scroll-proportion="2.7221375">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#836#2165#0" expanded="true" />
+            <element signature="e#2154#2155#0" expanded="true" />
+            <element signature="e#2202#3078#0" expanded="true" />
+            <element signature="e#3067#3068#0" expanded="true" />
+            <element signature="e#3121#3477#0" expanded="true" />
+            <element signature="e#3466#3467#0" expanded="true" />
+            <element signature="e#3520#4404#0" expanded="true" />
+            <element signature="e#3974#3982#0" expanded="true" />
+            <element signature="e#4393#4394#0" expanded="true" />
+            <element signature="e#4444#4900#0" expanded="true" />
+            <element signature="e#4889#4890#0" expanded="true" />
+            <element signature="e#5057#5251#0" expanded="true" />
+            <element signature="e#5240#5241#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -507,7 +741,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>juuu</last-edited>
+          <last-edited>vgf</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -520,11 +754,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>jivesoftware:smack:3.2.1</last-edited>
+          <last-edited>smack</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.3840079" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>

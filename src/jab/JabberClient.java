@@ -3,6 +3,7 @@ package jab;
 
 import org.jivesoftware.smack.*;
 import org.jivesoftware.smack.packet.Message;
+import org.jivesoftware.smackx.pubsub.PubSubManager;
 
 public final class JabberClient {
 
@@ -67,6 +68,7 @@ public final class JabberClient {
         conn = new XMPPConnection(conn_config);
         conn.connect();
         conn.login(pr.user, pr.password, "jab");
+        pmanager = new PubSubManager(conn);
         return conn;
     }
 
@@ -87,7 +89,13 @@ public final class JabberClient {
     }
 
 
+    public String getJid (){
+        return pr.user;
+    }
+
     private final Builder pr;
     private final ConnectionConfiguration conn_config;
-    private XMPPConnection conn;
+    public XMPPConnection conn;
+    public PubSubManager pmanager;
+
 }

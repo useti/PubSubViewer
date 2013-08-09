@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="jab.NodesList">
+  <grid id="27dc6" binding="pNodes" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="673" height="435"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <splitpane id="476a4">
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="200" height="200"/>
+          </grid>
+        </constraints>
+        <properties>
+          <orientation value="0"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <toolbar id="b82a4">
+            <constraints>
+              <splitpane position="left"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="8f334" class="javax.swing.JLabel">
+                <constraints/>
+                <properties>
+                  <text value="Label"/>
+                </properties>
+              </component>
+              <component id="ea008" class="javax.swing.JButton" binding="bCreate">
+                <constraints/>
+                <properties>
+                  <text value="Create"/>
+                </properties>
+              </component>
+              <component id="8b0ea" class="javax.swing.JButton" binding="bSubscribe">
+                <constraints/>
+                <properties>
+                  <text value="Subscribe"/>
+                </properties>
+              </component>
+              <component id="6a2b8" class="javax.swing.JTextField" binding="tNodeName">
+                <constraints/>
+                <properties/>
+              </component>
+            </children>
+          </toolbar>
+          <splitpane id="e47ba">
+            <constraints>
+              <splitpane position="right"/>
+            </constraints>
+            <properties>
+              <orientation value="0"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="e9d6f" class="javax.swing.JEditorPane" binding="tPost">
+                <constraints>
+                  <splitpane position="left"/>
+                </constraints>
+                <properties/>
+              </component>
+              <toolbar id="b857">
+                <constraints>
+                  <splitpane position="right"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <hspacer id="93377">
+                    <constraints/>
+                  </hspacer>
+                  <component id="3f6ec" class="javax.swing.JButton" binding="bPublish">
+                    <constraints/>
+                    <properties>
+                      <text value="Publish"/>
+                    </properties>
+                  </component>
+                </children>
+              </toolbar>
+            </children>
+          </splitpane>
+        </children>
+      </splitpane>
+      <splitpane id="61fa">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="200" height="200"/>
+          </grid>
+        </constraints>
+        <properties>
+          <orientation value="0"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="de833" class="javax.swing.JList" binding="lNodes">
+            <constraints>
+              <splitpane position="left"/>
+            </constraints>
+            <properties/>
+          </component>
+          <toolbar id="54928">
+            <constraints>
+              <splitpane position="right"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="9bfda" class="javax.swing.JButton" binding="button1" default-binding="true">
+                <constraints/>
+                <properties>
+                  <text value="Button"/>
+                </properties>
+              </component>
+              <component id="9ce8a" class="javax.swing.JButton" binding="button2" default-binding="true">
+                <constraints/>
+                <properties>
+                  <text value="Button"/>
+                </properties>
+              </component>
+              <hspacer id="60c05">
+                <constraints/>
+              </hspacer>
+            </children>
+          </toolbar>
+        </children>
+      </splitpane>
+      <component id="6f1b2" class="javax.swing.JList" binding="lPosts">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+    </children>
+  </grid>
+</form>

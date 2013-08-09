@@ -1,12 +1,8 @@
-import jab.JabberClient;
-import jab.MainForm;
-import jab.Processor;
+import jab.LoginForm;
 import org.jivesoftware.smack.XMPPConnection;
 import org.jivesoftware.smack.XMPPException;
 
 import javax.swing.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
 
@@ -30,11 +26,13 @@ public class Main {
 //        List<String> tj = new ArrayList<String>();
 //        tj.add("ytihoglaz@useti.ru");
 
-        JFrame frame = new JFrame("MainForm");
-        frame.setContentPane(new MainForm().p);
+        JFrame frame = new JFrame("LoginForm");
+        LoginForm lf = new LoginForm();
+        frame.setContentPane(lf.p);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+        lf.frame = frame;
 
 //        Processor.Builder bld = Processor.newBuilder(jabber)
 //                .to_jids( tj )

@@ -13,14 +13,15 @@ import java.awt.event.ActionListener;
  * Time: 16:43
  * To change this template use File | Settings | File Templates.
  */
-public class MainForm {
+public class LoginForm {
     private JButton bLogin;
     public JPanel p;
     private JPasswordField fPassword;
-    private JTextPane fLogin;
+    private JTextField fLogin;
     private JabberClient jabber;
+    public JFrame frame;
 
-    public MainForm() {
+    public LoginForm() {
         bLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -35,18 +36,31 @@ public class MainForm {
                 jabber.setSASLAuthenticationEnabled(true);
                 jabber.setSASLPlain();
                 jabber.setSelfSignedCertificateEnabled(true);
+
                 try {
                     jabber.connect();
                 } catch (XMPPException e) {
                     e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                 }
+
+                JFrame nf = new JFrame("NodesList");
+                NodesList nl = new NodesList();
+                nl.jabber = jabber;
+                nf.setContentPane(nl.pNodes);
+                nf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                nf.pack();
+                nf.setVisible(true);
+
+                frame.setVisible(false);
+
+                nl.loadSubscriptions();
             }
         });
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("MainForm");
-        frame.setContentPane(new MainForm().p);
+        JFrame frame = new JFrame("LoginForm");
+        frame.setContentPane(new LoginForm().p);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
