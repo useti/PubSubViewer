@@ -1,33 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jab/NodesList.form" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jab/NodesList.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/smack.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/jivesoftware_smack_3_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/jivesoftware_smackx_3_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/org_igniterealtime_smack_smackx_debug_3_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/org_igniterealtime_smack_smackx_jingle_3_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/smack-3.2.1-sources.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/smack-3.2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/smackx-3.2.1-sources.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/smackx-3.2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/smackx-debug-3.2.1-javadoc.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/smackx-debug-3.2.1-sources.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/smackx-debug-3.2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/smackx-jingle-3.2.1-javadoc.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/smackx-jingle-3.2.1-sources.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/smackx-jingle-3.2.1.jar" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/juuu.iml" afterPath="$PROJECT_DIR$/vgf.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/jab/MainForm.java" afterPath="$PROJECT_DIR$/src/jab/LoginForm.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/jab/fMain.form" afterPath="$PROJECT_DIR$/src/jab/fLogin.form" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jab/JabberClient.java" afterPath="$PROJECT_DIR$/src/jab/JabberClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" name="Default" comment="" />
     <ignored path="juuu.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/JabberSmackAPI.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1375788113911" ignored="false" />
@@ -38,7 +12,8 @@
     <file path="/MainForm.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1375794653006" ignored="false" />
     <file path="/LoginForm.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1376033720837" ignored="false" />
     <file path="/JabberClient.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1376038470840" ignored="false" />
-    <file path="/NodesList.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1376043493034" ignored="false" />
+    <file path="/NodesList.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1376045223560" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1376045257563" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +118,7 @@
       <file leaf-file-name="NodesList.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/jab/NodesList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="142" column="59" selection-start="5460" selection-end="5460" vertical-scroll-proportion="2.7221375">
+            <state line="86" column="83" selection-start="3453" selection-end="3453" vertical-scroll-proportion="0.61526716">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#836#2165#0" expanded="true" />
@@ -669,7 +644,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jab/NodesList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="59" selection-start="5460" selection-end="5460" vertical-scroll-proportion="2.7221375">
+        <state line="86" column="83" selection-start="3453" selection-end="3453" vertical-scroll-proportion="0.61526716">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#836#2165#0" expanded="true" />
