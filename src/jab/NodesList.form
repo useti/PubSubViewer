@@ -225,6 +225,9 @@
                         <properties>
                           <contentType value="text/html"/>
                         </properties>
+                        <clientProperties>
+                          <html.disable class="java.lang.Boolean" value="false"/>
+                        </clientProperties>
                       </component>
                     </children>
                   </scrollpane>
