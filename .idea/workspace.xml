@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/vgf_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jab/NodesList.form" afterPath="$PROJECT_DIR$/src/jab/NodesList.form" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jab/NodesList.java" afterPath="$PROJECT_DIR$/src/jab/NodesList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jab/fLogin.form" afterPath="$PROJECT_DIR$/src/jab/fLogin.form" />
     </list>
     <ignored path="juuu.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/JabberSmackAPI.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1375788113911" ignored="false" />
     <file path="/Main.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377090984430" ignored="false" />
-    <file path="/fragment.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377093673265" ignored="false" />
+    <file path="/fragment.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377260238945" ignored="false" />
     <file path="/Processor.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1375790847722" ignored="false" />
     <file path="/Dummy.txt" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377243259858" ignored="false" />
     <file path="/MainForm.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1375794653006" ignored="false" />
@@ -22,11 +18,11 @@
     <file path="/NodesList.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377254970648" ignored="false" />
     <file path="$PROJECT_DIR$/../rssBot/src/rssReader/main.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377083708195" ignored="false" />
     <file path="/main.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377088438413" ignored="false" />
-    <file path="$PROJECT_DIR$/../rssBot/src/rssReader/Main.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377254335773" ignored="false" />
+    <file path="$PROJECT_DIR$/../rssBot/src/rssReader/Main.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377260241407" ignored="false" />
     <file path="$PROJECT_DIR$/../rssBot/src/rssReader/IRss.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377092111879" ignored="false" />
     <file path="/IRss.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377091276471" ignored="false" />
-    <file path="$PROJECT_DIR$/../rssBot/src/rssReader/Feed.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377254610342" ignored="false" />
-    <file path="/Feed.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377254573362" ignored="false" />
+    <file path="$PROJECT_DIR$/../rssBot/src/rssReader/Feed.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377260253847" ignored="false" />
+    <file path="/Feed.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377260252943" ignored="false" />
     <file path="$PROJECT_DIR$/../rssBot/src/rssReader/JabberClient.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377094373539" ignored="false" />
     <file path="$PROJECT_DIR$/../rssBot/src/rssReader/NewsItem.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377247014341" ignored="false" />
     <file path="/NewsItem.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377247012954" ignored="false" />
@@ -146,6 +142,13 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="fLogin.form" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/jab/fLogin.form">
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Processor.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jab/Processor.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -173,7 +176,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NodesList.form" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="NodesList.form" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jab/NodesList.form">
           <provider selected="true" editor-type-id="ui-designer">
             <state />
@@ -215,11 +218,11 @@
         <option value="$PROJECT_DIR$/src/jab/fMain.form" />
         <option value="$PROJECT_DIR$/src/jab/MainForm.java" />
         <option value="$PROJECT_DIR$/src/jab/LoginForm.java" />
-        <option value="$PROJECT_DIR$/src/jab/fLogin.form" />
         <option value="$PROJECT_DIR$/src/jab/JabberClient.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/jab/NodesList.form" />
         <option value="$PROJECT_DIR$/src/jab/NodesList.java" />
+        <option value="$PROJECT_DIR$/src/jab/NodesList.form" />
+        <option value="$PROJECT_DIR$/src/jab/fLogin.form" />
       </list>
     </option>
   </component>
@@ -304,6 +307,60 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="juuu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="juuu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="juuu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="juuu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="juuu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jab" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="juuu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="juuu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jab" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LoginForm" />
+              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -413,7 +470,7 @@
     <frame x="0" y="27" width="1914" height="1053" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18488745" sideWeight="0.6714761" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18488745" sideWeight="0.6714761" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6707317" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29367632" sideWeight="0.6714761" order="1" side_tool="false" content_ui="tabs" />
@@ -546,18 +603,6 @@
         <state line="103" column="16" selection-start="4294" selection-end="4294" vertical-scroll-proportion="0.5235294" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jab/fLogin.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jab/LoginForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="18" selection-start="797" selection-end="1427" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jab/JabberClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="92" column="8" selection-start="2955" selection-end="2955" vertical-scroll-proportion="0.0">
@@ -590,6 +635,18 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jab/NodesList.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jab/LoginForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="18" selection-start="797" selection-end="1427" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jab/fLogin.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
       </provider>
