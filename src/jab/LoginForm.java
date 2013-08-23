@@ -5,27 +5,47 @@ import org.jivesoftware.smack.XMPPException;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Properties;
 
 /**
  * Created with IntelliJ IDEA.
  * User: ytihoglaz
  * Date: 06.08.13
  * Time: 16:43
- * To change this template use File | Settings | File Templates.
  */
 public class LoginForm {
     private JButton bLogin;
     public JPanel p;
     private JPasswordField fPassword;
     private JTextField fLogin;
+    private JCheckBox chbSave;
     private JabberClient jabber;
     public JFrame frame;
 
-    public LoginForm() {
+    private final Properties config;
+
+    public LoginForm() throws IOException {
+
+        config = new Properties();
+
+        config.load(new FileInputStream("config.properties"));
+
+        String isSaved = config.getProperty("saved","false");
+
+        if( isSaved.contains("true"))
+        {
+            chbSave.setSelected(true);
+            fLogin.setText(config.getProperty("jid"));
+            fPassword.setText(config.getProperty("pwd"));
+        }
+
         bLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                String pwd = fPassword.getText();
+                String pwd =  new String(fPassword.getPassword()); //fPassword.getText();
                 String log = fLogin.getText();
                 jabber = JabberClient.newBuilder("xmpp.useti.ru")
                 .setPassword(pwd)
@@ -40,7 +60,22 @@ public class LoginForm {
                 try {
                     jabber.connect();
                 } catch (XMPPException e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    e.printStackTrace();
+                }
+
+                if (chbSave.isSelected())
+                {
+                    config.setProperty("jid",log);
+                    config.setProperty("pwd",pwd);
+
+                    config.setProperty("saved", String.format("%s", chbSave.isSelected()));
+
+                    try {
+                        config.store(new FileOutputStream("config.properties"), null);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
                 }
 
                 JFrame nf = new JFrame("NodesList");
@@ -56,11 +91,16 @@ public class LoginForm {
                 nl.loadSubscriptions();
             }
         });
+
     }
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("LoginForm");
-        frame.setContentPane(new LoginForm().p);
+        try {
+            frame.setContentPane(new LoginForm().p);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
