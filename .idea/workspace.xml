@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jab/LoginForm.java" afterPath="$PROJECT_DIR$/src/jab/LoginForm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jab/fLogin.form" afterPath="$PROJECT_DIR$/src/jab/fLogin.form" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.properties" afterPath="$PROJECT_DIR$/config.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="juuu.iws" />
@@ -14,9 +12,9 @@
     <file path="/Main.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377090984430" ignored="false" />
     <file path="/fragment.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377260238945" ignored="false" />
     <file path="/Processor.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1375790847722" ignored="false" />
-    <file path="/Dummy.txt" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377269272574" ignored="false" />
+    <file path="/Dummy.txt" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377269406759" ignored="false" />
     <file path="/MainForm.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1375794653006" ignored="false" />
-    <file path="/LoginForm.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377269093900" ignored="false" />
+    <file path="/LoginForm.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377269815146" ignored="false" />
     <file path="/JabberClient.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1376038470840" ignored="false" />
     <file path="/NodesList.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377254970648" ignored="false" />
     <file path="$PROJECT_DIR$/../rssBot/src/rssReader/main.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377083708195" ignored="false" />
@@ -120,6 +118,21 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/jab/LoginForm.java" line="96" class="jab.LoginForm$2" package="jab">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
     </line_breakpoints>
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
@@ -167,23 +180,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="LoginForm.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="LoginForm.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jab/LoginForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="57" selection-start="421" selection-end="421" vertical-scroll-proportion="0.4041451">
+            <state line="70" column="50" selection-start="2094" selection-end="2094" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1092#2836#0" expanded="true" />
-                <element signature="e#2825#2826#0" expanded="true" />
+                <element signature="e#1092#2811#0" expanded="true" />
+                <element signature="e#2800#2801#0" expanded="true" />
+                <element signature="e#2849#3315#0" expanded="true" />
+                <element signature="e#3304#3305#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.properties" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ActionEvent.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///usr/lib/jvm/java-1.7.0-openjdk-i386/jre/lib/rt.jar!/java/awt/event/ActionEvent.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="28" selection-start="1052" selection-end="1052" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.properties" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="9" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0">
+            <state line="4" column="68" selection-start="78" selection-end="78" vertical-scroll-proportion="0.103626944">
               <folding />
             </state>
           </provider>
@@ -329,24 +353,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="juuu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="smack" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="juuu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -514,6 +520,11 @@
       <created>1375787528678</created>
       <updated>1375787528678</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added config file">
+      <created>1377269437330</created>
+      <updated>1377269437330</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -529,13 +540,13 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32852387" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852387" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24705252" sideWeight="0.6714761" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852387" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32852387" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -609,11 +620,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vgf.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="18" selection-start="793" selection-end="793" vertical-scroll-proportion="0.41450778" />
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../smack_3_3_0/smackx.jar!/org/jivesoftware/smackx/pubsub/Node.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="20" selection-start="1277" selection-end="1281" vertical-scroll-proportion="0.0" />
@@ -680,18 +686,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="9" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jab/fLogin.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="30" selection-start="579" selection-end="579" vertical-scroll-proportion="0.0">
@@ -701,14 +695,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/jab/fLogin.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.7.0-openjdk-i386/jre/lib/rt.jar!/java/awt/event/ActionEvent.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="28" selection-start="1052" selection-end="1052" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/jab/LoginForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="57" selection-start="421" selection-end="421" vertical-scroll-proportion="0.4041451">
+        <state line="70" column="50" selection-start="2094" selection-end="2094" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1092#2836#0" expanded="true" />
-            <element signature="e#2825#2826#0" expanded="true" />
+            <element signature="e#1092#2811#0" expanded="true" />
+            <element signature="e#2800#2801#0" expanded="true" />
+            <element signature="e#2849#3315#0" expanded="true" />
+            <element signature="e#3304#3305#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="68" selection-start="78" selection-end="78" vertical-scroll-proportion="0.103626944">
+          <folding />
         </state>
       </provider>
     </entry>

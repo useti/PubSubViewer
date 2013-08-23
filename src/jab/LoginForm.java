@@ -67,15 +67,14 @@ public class LoginForm {
                 {
                     config.setProperty("jid",log);
                     config.setProperty("pwd",pwd);
+                }
 
-                    config.setProperty("saved", String.format("%s", chbSave.isSelected()));
+                config.setProperty("saved", String.format("%s", chbSave.isSelected()));
 
-                    try {
-                        config.store(new FileOutputStream("config.properties"), null);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
+                try {
+                    config.store(new FileOutputStream("config.properties"), null);
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
 
                 JFrame nf = new JFrame("NodesList");
@@ -92,6 +91,20 @@ public class LoginForm {
             }
         });
 
+        chbSave.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                if (!chbSave.isSelected()){
+                    fPassword.setText("");
+                    fLogin.setText("");
+                }
+                else
+                {
+                    fPassword.setText(config.getProperty("pwd"));
+                    fLogin.setText(config.getProperty("jid"));
+                }
+            }
+        });
     }
 
     public static void main(String[] args) {
