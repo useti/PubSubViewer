@@ -6,12 +6,15 @@ import org.jivesoftware.smackx.pubsub.*;
 import org.jivesoftware.smackx.pubsub.listener.ItemEventListener;
 
 import javax.swing.*;
+import javax.swing.event.HyperlinkEvent;
+import javax.swing.event.HyperlinkListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -44,7 +47,7 @@ public class NodesList {
                                     "post",
                                     "pubsub:" + tNodeName.getText() + ":post",
                                     "<post xmlns='pubsub:" + tNodeName.getText() + ":post'><title>Lord of the Rings</title>"
-                                            + tPost.getText()
+                                            + tLink.getText()
                                             + "</post>"));
 
                     myNode.send(p);
@@ -101,7 +104,7 @@ public class NodesList {
                     List<? extends Item> items = n.getItems(ids);
                     for (Item i: items){
 
-                        tPost.setText(i.toXML());
+                        tLink.setText(i.toXML());
                     }
                 } catch (XMPPException e1) {
                     e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
@@ -130,6 +133,25 @@ public class NodesList {
                     jabber.pmanager.deleteNode(tNodeName.getText());
                 } catch (XMPPException e) {
                     e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                }
+            }
+        });
+        tLink.addHyperlinkListener(new HyperlinkListener() {
+            @Override
+            public void hyperlinkUpdate(HyperlinkEvent e) {
+                if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+                    if (Desktop.isDesktopSupported())
+                    {
+                        try {
+                            Desktop.getDesktop().browse(e.getURL().toURI());
+                        } catch (IOException e1) {
+                            // TODO Auto-generated catch block
+                            e1.printStackTrace();
+                        } catch (URISyntaxException e1) {
+                            // TODO Auto-generated catch block
+                            e1.printStackTrace();
+                        }
+                    }
                 }
             }
         });
@@ -193,10 +215,12 @@ public class NodesList {
     private JButton button1;
     private JButton button2;
     private JTextField tNodeName;
-    private JEditorPane tPost;
+    private JEditorPane tLink;
     private JButton bPublish;
     private JList lPosts;
     private JButton bSubscribe;
     private JButton bDelete;
+    private JEditorPane tTitle;
+    private JEditorPane tDescr;
     public JabberClient jabber;
 }

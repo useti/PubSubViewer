@@ -93,7 +93,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <grid id="2e77" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="2e77" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -149,6 +149,55 @@
                 </constraints>
                 <properties/>
               </component>
+              <grid id="59932" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <scrollpane id="35255">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="9c9a8" class="javax.swing.JEditorPane" binding="tTitle">
+                        <constraints/>
+                        <properties>
+                          <contentType value="text/html"/>
+                          <editable value="false"/>
+                        </properties>
+                        <clientProperties>
+                          <JEditorPane.w3cLengthUnits class="java.lang.Boolean" value="false"/>
+                        </clientProperties>
+                      </component>
+                    </children>
+                  </scrollpane>
+                  <scrollpane id="1cb48">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <horizontalScrollBarPolicy value="31"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <component id="e9d6f" class="javax.swing.JEditorPane" binding="tLink">
+                        <constraints/>
+                        <properties>
+                          <contentType value="text/html"/>
+                          <editable value="false"/>
+                          <inheritsPopupMenu value="true"/>
+                          <maximumSize width="297" height="297"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </scrollpane>
+                </children>
+              </grid>
             </children>
           </grid>
           <scrollpane id="e6432">
@@ -171,12 +220,10 @@
                     <properties/>
                     <border type="none"/>
                     <children>
-                      <component id="e9d6f" class="javax.swing.JEditorPane" binding="tPost">
+                      <component id="556e9" class="javax.swing.JEditorPane" binding="tDescr">
                         <constraints/>
                         <properties>
                           <contentType value="text/html"/>
-                          <inheritsPopupMenu value="true"/>
-                          <maximumSize width="297" height="297"/>
                         </properties>
                       </component>
                     </children>
