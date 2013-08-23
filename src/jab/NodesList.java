@@ -100,6 +100,7 @@ public class NodesList {
                     ids.add(id);
                     List<? extends Item> items = n.getItems(ids);
                     for (Item i: items){
+
                         tPost.setText(i.toXML());
                     }
                 } catch (XMPPException e1) {
@@ -120,6 +121,16 @@ public class NodesList {
                     e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                 }
 
+            }
+        });
+        bDelete.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                try {
+                    jabber.pmanager.deleteNode(tNodeName.getText());
+                } catch (XMPPException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                }
             }
         });
     }
@@ -147,6 +158,7 @@ public class NodesList {
                 DiscoverItems.Item i = itr.next();
                 model.addElement(i.getName());
             }
+
             lPosts.setModel(model);
         } catch (XMPPException e1) {
             e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
@@ -185,5 +197,6 @@ public class NodesList {
     private JButton bPublish;
     private JList lPosts;
     private JButton bSubscribe;
+    private JButton bDelete;
     public JabberClient jabber;
 }
