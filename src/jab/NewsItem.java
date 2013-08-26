@@ -45,34 +45,13 @@ public class NewsItem implements IRss {
 
         TagNode t = cleaner.clean(xml);
         String clean_xml = cleaner.getInnerHtml(t);
-//        Document doc = builder.parse(new InputSource(new StringReader(xml)));
-//
-//        NodeList posts = doc.getElementsByTagName("post");
-//        Element post;
-//
-//
-//        for( int i = 0;i<posts.getLength();i++) {
-//            post = (Element)posts.item(i);
-//            title = getElementValue(post, "title");
-//
-//            Node edescr = post.getElementsByTagName("description").item(0);
-//            description = serElement(edescr);
-//
-            t = cleaner.clean(description);
-            description = cleaner.getInnerHtml(t);
-        t = cleaner.clean(title);
-        title = cleaner.getInnerHtml(t);
-//
-//            Node elink = post.getElementsByTagName("link").item(0);
-//            link = serElement(elink);
-//
-            t = cleaner.clean(link);
-            link = cleaner.getInnerHtml(t);
-////            link =  getElementValue(post, "link");
-////            description = getElementValue(post, "description");
-//        }
-//
-//
+
+        t = cleaner.clean(description);
+        description = cleaner.getInnerHtml(t);
+
+        //String lnk = String.format("<a href=\"%s\" > %s </a>",link, link);
+        t = cleaner.clean(link);
+        link =  cleaner.getInnerHtml(t);
 
     }
 

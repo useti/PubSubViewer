@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jab/Feed.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jab/IRss.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.properties" afterPath="$PROJECT_DIR$/config.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jab/Feed.java" afterPath="$PROJECT_DIR$/src/jab/Feed.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jab/LoginForm.java" afterPath="$PROJECT_DIR$/src/jab/LoginForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jab/NewsItem.java" afterPath="$PROJECT_DIR$/src/jab/NewsItem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jab/NodesList.java" afterPath="$PROJECT_DIR$/src/jab/NodesList.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="juuu.iws" />
@@ -13,21 +15,21 @@
     <file path="/Main.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377090984430" ignored="false" />
     <file path="/fragment.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377287998544" ignored="false" />
     <file path="/Processor.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1375790847722" ignored="false" />
-    <file path="/Dummy.txt" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377502703016" ignored="false" />
+    <file path="/Dummy.txt" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377516389996" ignored="false" />
     <file path="/MainForm.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1375794653006" ignored="false" />
     <file path="/LoginForm.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377269815146" ignored="false" />
     <file path="/JabberClient.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1376038470840" ignored="false" />
-    <file path="/NodesList.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377288211920" ignored="false" />
+    <file path="/NodesList.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377519227595" ignored="false" />
     <file path="$PROJECT_DIR$/../rssBot/src/rssReader/main.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377083708195" ignored="false" />
     <file path="/main.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377088438413" ignored="false" />
-    <file path="$PROJECT_DIR$/../rssBot/src/rssReader/Main.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377502768585" ignored="false" />
+    <file path="$PROJECT_DIR$/../rssBot/src/rssReader/Main.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377518443261" ignored="false" />
     <file path="$PROJECT_DIR$/../rssBot/src/rssReader/IRss.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377092111879" ignored="false" />
     <file path="/IRss.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377502329381" ignored="false" />
     <file path="$PROJECT_DIR$/../rssBot/src/rssReader/Feed.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377260253847" ignored="false" />
-    <file path="/Feed.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377506780701" ignored="false" />
+    <file path="/Feed.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377519291978" ignored="false" />
     <file path="$PROJECT_DIR$/../rssBot/src/rssReader/JabberClient.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377094373539" ignored="false" />
     <file path="$PROJECT_DIR$/../rssBot/src/rssReader/NewsItem.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377247014341" ignored="false" />
-    <file path="/NewsItem.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377294211162" ignored="false" />
+    <file path="/NewsItem.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377520640022" ignored="false" />
     <file path="/config.properties" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377269217558" ignored="false" />
     <file path="$PROJECT_DIR$/../RSS_Bot/src/rssReader/NewsItem.java" changelist="cfcb6fd2-188d-4171-8fb4-707667fb0aa2" time="1377281518804" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,37 +47,7 @@
   </component>
   <component name="DebuggerManager">
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/jab/NodesList.java" line="78" class="jab.NodesList$2" package="jab">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/jab/NodesList.java" line="146" class="jab.NodesList$6" package="jab">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/jab/NodesList.java" line="145" class="jab.NodesList$6" package="jab">
+      <breakpoint url="file://$PROJECT_DIR$/src/jab/NewsItem.java" line="52" class="jab.NewsItem" package="jab">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -91,6 +63,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </line_breakpoints>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -127,7 +100,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -140,34 +112,16 @@
       <file leaf-file-name="LoginForm.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jab/LoginForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="103" column="67" selection-start="3273" selection-end="3273" vertical-scroll-proportion="0.0">
+            <state line="93" column="0" selection-start="2907" selection-end="2907" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Processor.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jab/Processor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="13" selection-start="2420" selection-end="2830" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActionEvent.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar:///usr/lib/jvm/java-1.7.0-openjdk-i386/jre/lib/rt.jar!/java/awt/event/ActionEvent.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="28" selection-start="1052" selection-end="1052" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.properties" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="config.properties" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="78" selection-end="78" vertical-scroll-proportion="0.0">
+            <state line="4" column="0" selection-start="78" selection-end="78" vertical-scroll-proportion="0.12793177">
               <folding />
             </state>
           </provider>
@@ -183,7 +137,34 @@
       <file leaf-file-name="NodesList.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jab/NodesList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="238" column="31" selection-start="9461" selection-end="9488" vertical-scroll-proportion="0.0">
+            <state line="219" column="0" selection-start="9527" selection-end="9527" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#4646#5002#0" expanded="true" />
+                <element signature="e#4991#4992#0" expanded="true" />
+                <element signature="e#5045#5359#0" expanded="true" />
+                <element signature="e#5348#5349#0" expanded="true" />
+                <element signature="e#6993#7786#0" expanded="true" />
+                <element signature="e#7775#7776#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="14" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Affiliation.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/../smack_3_3_0/smackx.jar!/org/jivesoftware/smackx/pubsub/Affiliation.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="28" selection-start="809" selection-end="809" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -192,39 +173,21 @@
       <file leaf-file-name="NewsItem.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jab/NewsItem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="35" selection-start="1290" selection-end="1290" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="51" column="10" selection-start="1644" selection-end="1644" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Feed.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Feed.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jab/Feed.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="41" selection-start="661" selection-end="661" vertical-scroll-proportion="0.84182775">
+            <state line="38" column="0" selection-start="1197" selection-end="1197" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1067#2424#0" expanded="true" />
+                <element signature="e#2413#2414#0" expanded="true" />
+                <element signature="e#2682#2690#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IRss.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jab/IRss.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="67" selection-start="562" selection-end="562" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Element.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar:///usr/lib/jvm/default-java/jre/lib/rt.jar!/org/w3c/dom/Element.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="17" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -254,13 +217,13 @@
         <option value="$PROJECT_DIR$/src/jab/JabberClient.java" />
         <option value="$PROJECT_DIR$/src/jab/fLogin.form" />
         <option value="$PROJECT_DIR$/config.properties" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/jab/NodesList.form" />
+        <option value="$PROJECT_DIR$/src/jab/IRss.java" />
         <option value="$PROJECT_DIR$/src/jab/LoginForm.java" />
         <option value="$PROJECT_DIR$/src/jab/NodesList.java" />
-        <option value="$PROJECT_DIR$/src/jab/NodesList.form" />
-        <option value="$PROJECT_DIR$/src/jab/NewsItem.java" />
-        <option value="$PROJECT_DIR$/src/jab/IRss.java" />
         <option value="$PROJECT_DIR$/src/jab/Feed.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/jab/NewsItem.java" />
       </list>
     </option>
   </component>
@@ -268,10 +231,10 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
+    <option name="x" value="2" />
     <option name="y" value="27" />
-    <option name="width" value="1922" />
-    <option name="height" value="1054" />
+    <option name="width" value="1910" />
+    <option name="height" value="1052" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -386,13 +349,13 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="Repository.Attach.Sources" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="Repository.Attach.Sources" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="Downloaded.Files.Path" value="$PROJECT_DIR$/lib" />
     <property name="dynamic.classpath" value="false" />
+    <property name="Downloaded.Files.Path" value="$PROJECT_DIR$/lib" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
@@ -478,25 +441,25 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="27" width="1922" height="1054" extended-state="6" />
+    <frame x="2" y="27" width="1910" height="1052" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26530612" sideWeight="0.66" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6707317" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19760479" sideWeight="0.6590563" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1970999" sideWeight="0.66" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45509893" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.45" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32705098" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32666665" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24919441" sideWeight="0.55" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934132" sideWeight="0.5449011" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15368196" sideWeight="0.65964526" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34035477" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26603934" sideWeight="0.6590563" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15359828" sideWeight="0.55" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -571,42 +534,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/jab/JabberClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="8" selection-start="2955" selection-end="2955" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-1.7.0-openjdk-i386/jre/lib/rt.jar!/javax/swing/AbstractButton.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="237" column="32" selection-start="10459" selection-end="10476" vertical-scroll-proportion="0.33333334" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="30" selection-start="579" selection-end="579" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jab/fLogin.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-1.7.0-openjdk-i386/jre/lib/rt.jar!/java/awt/event/ActionEvent.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="28" selection-start="1052" selection-end="1052" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../smack_3_3_0/smackx.jar!/org/jivesoftware/smackx/pubsub/PayloadItem.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="28" selection-start="715" selection-end="715" vertical-scroll-proportion="0.61538464" />
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/default-java/jre/lib/rt.jar!/org/w3c/dom/Element.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="17" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0">
@@ -619,28 +546,9 @@
         <state line="13" column="11" selection-start="453" selection-end="453" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jab/NodesList.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jab/IRss.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="67" selection-start="562" selection-end="562" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="78" selection-end="78" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jab/LoginForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="67" selection-start="3273" selection-end="3273" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -652,28 +560,96 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/../smack_3_3_0/smackx.jar!/org/jivesoftware/smackx/pubsub/ItemPublishEvent.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="29" selection-start="860" selection-end="860" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.7.0-openjdk-i386/jre/lib/rt.jar!/javax/swing/AbstractButton.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="237" column="16" selection-start="10459" selection-end="10459" vertical-scroll-proportion="0.33333334" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jab/LoginForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="0" selection-start="2907" selection-end="2907" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../smack_3_3_0/smackx.jar!/org/jivesoftware/smackx/pubsub/Affiliation.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="28" selection-start="809" selection-end="809" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../smack_3_3_0/smackx.jar!/org/jivesoftware/smackx/pubsub/Item.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="14" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jab/NodesList.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/jab/NodesList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="238" column="31" selection-start="9461" selection-end="9488" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="219" column="0" selection-start="9527" selection-end="9527" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#4646#5002#0" expanded="true" />
+            <element signature="e#4991#4992#0" expanded="true" />
+            <element signature="e#5045#5359#0" expanded="true" />
+            <element signature="e#5348#5349#0" expanded="true" />
+            <element signature="e#6993#7786#0" expanded="true" />
+            <element signature="e#7775#7776#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jab/NewsItem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="35" selection-start="1290" selection-end="1290" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="51" column="10" selection-start="1644" selection-end="1644" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../smack_3_3_0/smackx.jar!/org/jivesoftware/smackx/packet/DiscoverItems.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="32" selection-start="2015" selection-end="2015" vertical-scroll-proportion="0.7297297">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jab/Feed.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="41" selection-start="661" selection-end="661" vertical-scroll-proportion="0.84182775">
+        <state line="38" column="0" selection-start="1197" selection-end="1197" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1067#2424#0" expanded="true" />
+            <element signature="e#2413#2414#0" expanded="true" />
+            <element signature="e#2682#2690#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="78" selection-end="78" vertical-scroll-proportion="0.12793177">
+          <folding />
         </state>
       </provider>
     </entry>

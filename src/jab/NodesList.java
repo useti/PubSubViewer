@@ -18,9 +18,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
+import java.util.*;
 import java.util.List;
 
 /**
@@ -33,6 +31,7 @@ import java.util.List;
 public class NodesList {
 
     public NodesList() {
+        feeds = new HashMap<String,Feed>();
         bPublish.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -60,6 +59,14 @@ public class NodesList {
 
                 } catch (XMPPException e) {
                     e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                } catch (ParserConfigurationException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                } catch (TransformerException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                } catch (SAXException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                } catch (IOException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                 }
             }
         });
@@ -81,6 +88,14 @@ public class NodesList {
 
                 } catch (XMPPException e) {
                     e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                } catch (ParserConfigurationException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                } catch (IOException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                } catch (SAXException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                } catch (TransformerException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                 }
             }
         });
@@ -98,33 +113,7 @@ public class NodesList {
             public void valueChanged(ListSelectionEvent e) {
                 DefaultListModel dlm = (DefaultListModel) lPosts.getModel();
                 String id = dlm.get(e.getFirstIndex()).toString();
-                String node = tNodeName.getText() ;
-                try {
-
-                    LeafNode n = jabber.pmanager.getNode(node);
-                    Collection<String> ids = new ArrayList<String>(1);
-                    ids.add(id);
-                    List<? extends Item> items = n.getItems(ids);
-                    for (Item i: items){
-                        NewsItem newsItem = new NewsItem(i.toXML());
-
-                        tTitle.setText(newsItem.getTitle());
-                        tLink.setText(newsItem.getLink());
-                        tDescr.setText(newsItem.getDescription());
-                    }
-                } catch (XMPPException e1) {
-                    e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                } catch (ParserConfigurationException e1) {
-                    e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                } catch (SAXException e1) {
-                    e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                } catch (IOException e1) {
-                    e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                } catch (TransformerException e1) {
-                    e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                }
-
-
+                loadNewsItem(id);
             }
         });
         bSubscribe.addActionListener(new ActionListener() {
@@ -135,6 +124,14 @@ public class NodesList {
                     LeafNode leaf = jabber.pmanager.getNode(tNodeName.getText());
                     subscribe(leaf);
                 } catch (XMPPException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                } catch (ParserConfigurationException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                } catch (IOException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                } catch (SAXException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                } catch (TransformerException e) {
                     e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                 }
 
@@ -171,7 +168,29 @@ public class NodesList {
         });
     }
 
-    private void subscribe(final LeafNode leaf) throws XMPPException {
+    private void loadNewsItem(String id) {
+        String node = tNodeName.getText() ;
+        //            LeafNode n = jabber.pmanager.getNode(node);
+//            Collection<String> ids = new ArrayList<String>(1);
+//            ids.add(id);
+//            List<? extends Item> items = n.getItems(ids);
+//            for (Item i: items){
+//                NewsItem newsItem = new NewsItem(i.toXML());
+//
+//                tTitle.setText(newsItem.getTitle());
+//                tLink.setText(newsItem.getLink());
+//                tDescr.setText(newsItem.getDescription());
+//            }
+        Feed f = feeds.get(node);
+        IRss n = f.getItems().get(id);
+
+        tTitle.setText(n.getTitle());
+        tLink.setText(n.getLink());
+        tDescr.setText(n.getDescription());
+
+    }
+
+    private void subscribe(final LeafNode leaf) throws XMPPException, ParserConfigurationException, TransformerException, SAXException, IOException {
         leaf.subscribe(jabber.getJid());
 
         leaf.addItemEventListener(new ItemEventListener() {
@@ -185,29 +204,26 @@ public class NodesList {
     }
 
     private void loadPosts(String node) {
-        try {
-            LeafNode n =  jabber.pmanager.getNode(node);
-            DiscoverItems nodeItems = n.discoverItems();
-            DefaultListModel model = new DefaultListModel();
-            Iterator<DiscoverItems.Item> itr = nodeItems.getItems();
-            while(itr.hasNext()) {
-                DiscoverItems.Item i = itr.next();
-                model.addElement(i.getName());
-            }
-
-            lPosts.setModel(model);
-        } catch (XMPPException e1) {
-            e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        DefaultListModel model = new DefaultListModel();
+        Feed f = feeds.get(node);
+        for (String s: f.getItem_names())
+        {
+            model.addElement(s);
         }
+        lPosts.setModel(model);
     }
 
-    public void loadSubscriptions()
-    {
+    public void loadSubscriptions() throws ParserConfigurationException, IOException, SAXException, TransformerException {
         try {
-            List<Affiliation> list =  jabber.pmanager.getAffiliations();
+            //List<Affiliation> list =  jabber.pmanager.getAffiliations();
+
+            List<Subscription> subscriptions = jabber.pmanager.getSubscriptions();
+
             DefaultListModel model = new DefaultListModel();
-            for (Affiliation s: list){
-                model.addElement(s.getNodeId());
+            for (Subscription s: subscriptions){
+                Feed f= new Feed(s,jabber);
+                model.addElement(f.getName());
+                feeds.put(f.getName(),f);
             }
             lNodes.setModel(model);
         } catch (XMPPException e1) {
@@ -222,6 +238,8 @@ public class NodesList {
         frame.pack();
         frame.setVisible(true);
     }
+
+    private Map<String,Feed> feeds;
 
     public JPanel pNodes;
     private JList lNodes;
