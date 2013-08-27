@@ -42,9 +42,8 @@ public class Feed {
                 for(Item itm:list)
                 {
                     try {
-                        NewsItem newsItem = new NewsItem(itm.toXML());
+                        NewsItem newsItem = new NewsItem(itm.toXML(), true);
                         String title = newsItem.getTitle();
-
                         item_names.add(title);
                         items.put(title,newsItem);
 
@@ -69,21 +68,24 @@ public class Feed {
         DiscoverItems nodeItems = leaf.discoverItems();
         Iterator<DiscoverItems.Item> itr = nodeItems.getItems();
 
+        List<String> ids = new ArrayList<String>();
 
         while(itr.hasNext()) {
-            List<String> ids = new ArrayList<String>(1);
             DiscoverItems.Item i = itr.next();
             String id = i.getName();
             ids.add(id);
-            List<Item> its = leaf.getItems(ids);
-            for (Item ii: its){
-                NewsItem newsItem = new NewsItem(ii.toXML());
+        }
+
+        List<Item> its = leaf.getItems(ids);
+        for (Object ii: its){
+            if(ii.getClass().equals(org.jivesoftware.smackx.pubsub.PayloadItem.class)){
+                NewsItem newsItem = new NewsItem( ((Item) ii).toXML(), false);
+
                 String title = newsItem.getTitle();
                 item_names.add(title);
                 items.put(title,newsItem);
             }
         }
-
 
 
     }

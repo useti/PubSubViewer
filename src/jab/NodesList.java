@@ -193,14 +193,29 @@ public class NodesList {
     private void subscribe(final LeafNode leaf) throws XMPPException, ParserConfigurationException, TransformerException, SAXException, IOException {
         leaf.subscribe(jabber.getJid());
 
-        leaf.addItemEventListener(new ItemEventListener() {
-            @Override
-            public void handlePublishedItems(ItemPublishEvent itemPublishEvent) {
-                loadPosts(leaf.getId());
-            }
-        });
+        List<Subscription> subs = jabber.pmanager.getSubscriptions();
 
-        loadSubscriptions();
+        for (Subscription s : subs){
+            if (s.getNode().equals(leaf.getId())){
+                Feed feed = new Feed(s,jabber);
+                feeds.put( feed.getName(),feed);
+            }
+        }
+
+        DefaultListModel model = new DefaultListModel();
+        for (String str: feeds.keySet()){
+            model.addElement(str);
+        }
+        lNodes.setModel(model);
+
+//        leaf.addItemEventListener(new ItemEventListener() {
+//            @Override
+//            public void handlePublishedItems(ItemPublishEvent itemPublishEvent) {
+//                loadPosts(leaf.getId());
+//            }
+//        });
+//
+//        loadSubscriptions();
     }
 
     private void loadPosts(String node) {

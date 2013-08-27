@@ -28,5 +28,7 @@ public interface IRss {
     // Description
     public String getDescription();
 
+    public boolean getUnread();
+
 //    public PayloadItem genPayload();
 }
