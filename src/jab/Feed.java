@@ -1,6 +1,7 @@
 package jab;
 
 import org.jivesoftware.smack.XMPPException;
+import org.jivesoftware.smack.packet.DefaultPacketExtension;
 import org.jivesoftware.smackx.packet.DiscoverItems;
 import org.jivesoftware.smackx.pubsub.*;
 import org.jivesoftware.smackx.pubsub.listener.ItemEventListener;
@@ -29,6 +30,7 @@ public class Feed {
         items = new HashMap<String, IRss>();
 
         item_names = new ArrayList<String>();
+        newsHandlers = new ArrayList<NewsArrivedEvent>();
 
         LeafNode leaf = this.jabber.pmanager.getNode(this.name);
 
@@ -42,7 +44,7 @@ public class Feed {
                 for(Item itm:list)
                 {
                     try {
-                        NewsItem newsItem = new NewsItem(itm.toXML(), true);
+                        NewsItem newsItem = new NewsItem(itm.toXML(), itm.getId(), true);
                         String title = newsItem.getTitle();
                         item_names.add(title);
                         items.put(title,newsItem);
@@ -58,7 +60,9 @@ public class Feed {
                     }
                 }
 
-                //TODO: Add handler;
+                for (NewsArrivedEvent event: newsHandlers){
+                    event.HandleNews(((Feed)me).getName());
+                }
             }
         });
 
@@ -68,26 +72,33 @@ public class Feed {
         DiscoverItems nodeItems = leaf.discoverItems();
         Iterator<DiscoverItems.Item> itr = nodeItems.getItems();
 
-        List<String> ids = new ArrayList<String>();
-
         while(itr.hasNext()) {
+
+            List<String> ids = new ArrayList<String>();
             DiscoverItems.Item i = itr.next();
             String id = i.getName();
             ids.add(id);
-        }
 
-        List<Item> its = leaf.getItems(ids);
-        for (Object ii: its){
-            if(ii.getClass().equals(org.jivesoftware.smackx.pubsub.PayloadItem.class)){
-                NewsItem newsItem = new NewsItem( ((Item) ii).toXML(), false);
-
-                String title = newsItem.getTitle();
-                item_names.add(title);
-                items.put(title,newsItem);
+            List<Item> its = leaf.getItems(ids);
+            for (Object ii: its){
+                if(ii.getClass().equals(org.jivesoftware.smackx.pubsub.PayloadItem.class)){
+                    NewsItem newsItem = new NewsItem( ((Item) ii).toXML(), ((Item) ii).getId(), false);
+                    String title = newsItem.getTitle();
+                    item_names.add(title);
+                    items.put(title,newsItem);
+                }
+//                else if (ii.getClass().equals(org.jivesoftware.smack.packet.DefaultPacketExtension.class)){
+//                    DefaultPacketExtension extension = (DefaultPacketExtension)ii;
+//                    NewsItem newsItem = new NewsItem(extension.toXML(), ((DefaultPacketExtension)ii)., false);
+//                    String title = newsItem.getTitle();
+//                    item_names.add(title);
+//                    items.put(title,newsItem);
+//                }
             }
         }
 
 
+        me = this;
     }
 
     public String getName() {
@@ -108,6 +119,14 @@ public class Feed {
     }
 
     private List<String> item_names;
+
+    public void addNewsHandlers(NewsArrivedEvent newsHandler) {
+        this.newsHandlers.add(newsHandler);
+    }
+
+    private List<NewsArrivedEvent> newsHandlers;
+
+    private final Object me;
 
     public int getUnreadCounter() {
         return unreadCounter;

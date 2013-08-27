@@ -25,7 +25,9 @@
             <children>
               <component id="de833" class="javax.swing.JList" binding="lNodes">
                 <constraints/>
-                <properties/>
+                <properties>
+                  <selectionMode value="0"/>
+                </properties>
               </component>
             </children>
           </scrollpane>
@@ -84,6 +86,7 @@
                 <constraints/>
                 <properties>
                   <font style="0"/>
+                  <selectionMode value="0"/>
                 </properties>
                 <clientProperties>
                   <html.disable class="java.lang.Boolean" value="true"/>

@@ -26,7 +26,8 @@ import java.util.Date;
  * To change this template use File | Settings | File Templates.
  */
 public class NewsItem implements IRss {
-    public NewsItem(String xml, boolean unread) throws ParserConfigurationException, IOException, SAXException, TransformerException {
+    public NewsItem(String xml, String id, boolean unread) throws ParserConfigurationException, IOException, SAXException, TransformerException {
+        this.id = id;
         this.unread = unread;
 
         builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
@@ -90,6 +91,11 @@ public class NewsItem implements IRss {
     private String title;
     private String link;
     private String description;
+    private String id;
+
+    public String getId() {
+        return id;
+    }
 
     @Override
     public String getTitle() {

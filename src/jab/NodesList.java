@@ -1,6 +1,7 @@
 package jab;
 
 import org.jivesoftware.smack.XMPPException;
+import org.jivesoftware.smackx.packet.DiscoverInfo;
 import org.jivesoftware.smackx.packet.DiscoverItems;
 import org.jivesoftware.smackx.pubsub.*;
 import org.jivesoftware.smackx.pubsub.listener.ItemEventListener;
@@ -103,17 +104,27 @@ public class NodesList {
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 DefaultListModel dlm = (DefaultListModel) lNodes.getModel();
-                String node = dlm.get(e.getFirstIndex()).toString();
-                tNodeName.setText(node);
-                loadPosts(node);
+                ListSelectionModel lsm = (ListSelectionModel)lNodes.getSelectionModel();
+
+                if (!lsm.isSelectionEmpty())
+                {
+                    String node = dlm.get(lsm.getMinSelectionIndex()).toString();
+                    tNodeName.setText(node);
+                    loadPosts(node);
+                }
             }
         });
         lPosts.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 DefaultListModel dlm = (DefaultListModel) lPosts.getModel();
-                String id = dlm.get(e.getFirstIndex()).toString();
-                loadNewsItem(id);
+                ListSelectionModel lsm = (ListSelectionModel)lPosts.getSelectionModel();
+
+                if(!lsm.isSelectionEmpty())
+                {
+                    String id = dlm.get(lsm.getMinSelectionIndex()).toString();
+                    loadNewsItem(id);
+                }
             }
         });
         bSubscribe.addActionListener(new ActionListener() {
@@ -221,6 +232,12 @@ public class NodesList {
     private void loadPosts(String node) {
         DefaultListModel model = new DefaultListModel();
         Feed f = feeds.get(node);
+        f.addNewsHandlers(new NewsArrivedEvent() {
+            @Override
+            public void HandleNews(String from) {
+                loadPosts(from);
+            }
+        });
         for (String s: f.getItem_names())
         {
             model.addElement(s);
@@ -232,11 +249,22 @@ public class NodesList {
         try {
             //List<Affiliation> list =  jabber.pmanager.getAffiliations();
 
+            // Get the pubsub features that are supported
+            DiscoverItems discoverItems = jabber.pmanager.discoverNodes(null);
+
+
+
             List<Subscription> subscriptions = jabber.pmanager.getSubscriptions();
 
             DefaultListModel model = new DefaultListModel();
             for (Subscription s: subscriptions){
                 Feed f= new Feed(s,jabber);
+                f.addNewsHandlers(new NewsArrivedEvent() {
+                    @Override
+                    public void HandleNews(String from) {
+                        loadPosts(from);
+                    }
+                });
                 model.addElement(f.getName());
                 feeds.put(f.getName(),f);
             }
