@@ -30,12 +30,10 @@ public class NewsItem implements IRss {
         this.id = id;
         this.unread = unread;
 
-        builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-
         link = xml.substring(xml.indexOf("<link>"),xml.indexOf("</link>"));
         title = xml.substring(xml.indexOf("<title>"),xml.indexOf("</title>")).replace("<title>"," ");
         description = xml.substring(xml.indexOf("<description>"),xml.indexOf("</description>"));
-
+        pDate = xml.substring(xml.indexOf("<description>"),xml.indexOf("</description>"));
 
         HtmlCleaner cleaner = new HtmlCleaner();
 
@@ -45,10 +43,7 @@ public class NewsItem implements IRss {
 
         props.setOmitUnknownTags(true);
 
-        TagNode t = cleaner.clean(xml);
-        String clean_xml = cleaner.getInnerHtml(t);
-
-        t = cleaner.clean(description);
+        TagNode t = cleaner.clean(description);
         description = cleaner.getInnerHtml(t);
 
         //String lnk = String.format("<a href=\"%s\" > %s </a>",link, link);
@@ -57,41 +52,12 @@ public class NewsItem implements IRss {
 
     }
 
-    private String serElement(Node node) throws TransformerException {
-        TransformerFactory transFactory = TransformerFactory.newInstance();
-        Transformer transformer = transFactory.newTransformer();
-        StringWriter buffer = new StringWriter();
-        transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-        transformer.transform(new DOMSource(node),
-                new StreamResult(buffer));
-        String str = buffer.toString();
-        return str;
-    }
 
-    protected String getElementValue(Element parent,String label) {
-        return getCharacterDataFromElement((Element)parent.getElementsByTagName(label).item(0));
-    }
-
-    private String getCharacterDataFromElement(Element e) {
-        try {
-            Node child = e.getFirstChild();
-            if(child instanceof CharacterData) {
-                CharacterData cd = (CharacterData) child;
-                return cd.getData();
-            }
-        }
-        catch(Exception ex) {
-
-        }
-        return "";
-    } //private String getCharacterDataFromElement
-
-
-    private final DocumentBuilder builder;
     private String title;
     private String link;
     private String description;
     private String id;
+    private String pDate;
 
     public String getId() {
         return id;
@@ -113,7 +79,7 @@ public class NewsItem implements IRss {
 
     @Override
     public Date getPDate() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return new Date(Date.parse(pDate));  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     @Override

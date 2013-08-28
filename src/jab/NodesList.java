@@ -1,10 +1,7 @@
 package jab;
 
 import org.jivesoftware.smack.XMPPException;
-import org.jivesoftware.smackx.packet.DiscoverInfo;
-import org.jivesoftware.smackx.packet.DiscoverItems;
 import org.jivesoftware.smackx.pubsub.*;
-import org.jivesoftware.smackx.pubsub.listener.ItemEventListener;
 import org.xml.sax.SAXException;
 
 import javax.swing.*;
@@ -44,7 +41,7 @@ public class NodesList {
                 try {
                     LeafNode myNode = jabber.pmanager.getNode(tNodeName.getText());
 
-                    PayloadItem p = new PayloadItem(
+                    PayloadItem<SimplePayload> p = new PayloadItem<SimplePayload>(
                             tNodeName.getText() + "-" + System.currentTimeMillis(),
                             new SimplePayload(
                                     "post",
@@ -59,15 +56,15 @@ public class NodesList {
                     loadPosts(tNodeName.getText());
 
                 } catch (XMPPException e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    e.printStackTrace();
                 } catch (ParserConfigurationException e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    e.printStackTrace();
                 } catch (TransformerException e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    e.printStackTrace();
                 } catch (SAXException e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    e.printStackTrace();
                 } catch (IOException e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    e.printStackTrace();
                 }
             }
         });
@@ -88,15 +85,15 @@ public class NodesList {
                     subscribe(leaf);
 
                 } catch (XMPPException e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    e.printStackTrace();
                 } catch (ParserConfigurationException e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    e.printStackTrace();
                 } catch (IOException e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    e.printStackTrace();
                 } catch (SAXException e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    e.printStackTrace();
                 } catch (TransformerException e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    e.printStackTrace();
                 }
             }
         });
@@ -104,7 +101,7 @@ public class NodesList {
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 DefaultListModel dlm = (DefaultListModel) lNodes.getModel();
-                ListSelectionModel lsm = (ListSelectionModel)lNodes.getSelectionModel();
+                ListSelectionModel lsm = lNodes.getSelectionModel();
 
                 if (!lsm.isSelectionEmpty())
                 {
@@ -118,7 +115,7 @@ public class NodesList {
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 DefaultListModel dlm = (DefaultListModel) lPosts.getModel();
-                ListSelectionModel lsm = (ListSelectionModel)lPosts.getSelectionModel();
+                ListSelectionModel lsm = lPosts.getSelectionModel();
 
                 if(!lsm.isSelectionEmpty())
                 {
@@ -135,15 +132,15 @@ public class NodesList {
                     LeafNode leaf = jabber.pmanager.getNode(tNodeName.getText());
                     subscribe(leaf);
                 } catch (XMPPException e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    e.printStackTrace();
                 } catch (ParserConfigurationException e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    e.printStackTrace();
                 } catch (IOException e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    e.printStackTrace();
                 } catch (SAXException e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    e.printStackTrace();
                 } catch (TransformerException e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    e.printStackTrace();
                 }
 
             }
@@ -154,7 +151,7 @@ public class NodesList {
                 try {
                     jabber.pmanager.deleteNode(tNodeName.getText());
                 } catch (XMPPException e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    e.printStackTrace();
                 }
             }
         });
@@ -268,7 +265,7 @@ public class NodesList {
             }
             lNodes.setModel(model);
         } catch (XMPPException e1) {
-            e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e1.printStackTrace();
         }
     }
 
