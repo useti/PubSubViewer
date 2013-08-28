@@ -13,6 +13,9 @@ import java.util.Date;
  * To change this template use File | Settings | File Templates.
  */
 public interface IRss {
+    // ID
+    public String getId();
+
     // Title
     public String getTitle();
 
@@ -29,6 +32,7 @@ public interface IRss {
     public String getDescription();
 
     public boolean getUnread();
+    public void setUnread(boolean state);
 
 //    public PayloadItem genPayload();
 }

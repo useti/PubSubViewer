@@ -5,6 +5,9 @@ import org.jivesoftware.smack.*;
 import org.jivesoftware.smack.packet.Message;
 import org.jivesoftware.smackx.pubsub.PubSubManager;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public final class JabberClient {
 
     public static class Builder {
@@ -28,6 +31,7 @@ public final class JabberClient {
 
     private JabberClient(Builder bld) {
         this.pr = bld;
+        offline_messages = new ArrayList<Message>();
         conn_config = (pr.service != null) ?
                 new ConnectionConfiguration(pr.addr, pr.port, pr.service) :
                 new ConnectionConfiguration(pr.addr, pr.port);
@@ -66,6 +70,21 @@ public final class JabberClient {
 
     public XMPPConnection connect() throws XMPPException {
         conn = new XMPPConnection(conn_config);
+
+        ChatManager chatmanager = conn.getChatManager();
+
+        chatmanager.addChatListener(new ChatManagerListener() {
+            @Override
+            public void chatCreated(Chat chat, boolean b) {
+                chat.addMessageListener(new MessageListener() {
+                    @Override
+                    public void processMessage(Chat chat, Message message) {
+                        offline_messages.add(message);
+                    }
+                });
+            }
+        });
+
         conn.connect();
         conn.login(pr.user, pr.password, "jab");
         pmanager = new PubSubManager(conn);
@@ -97,5 +116,11 @@ public final class JabberClient {
     private final ConnectionConfiguration conn_config;
     public XMPPConnection conn;
     public PubSubManager pmanager;
+
+    public List<Message> getOffline_messages() {
+        return offline_messages;
+    }
+
+    private List<Message> offline_messages;
 
 }

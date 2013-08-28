@@ -79,7 +79,7 @@ public class NodesList {
                 form.setAccessModel(AccessModel.open);
                 form.setDeliverPayloads(true);
                 form.setNotifyRetract(true);
-                form.setPersistentItems(true);
+                form.setPersistentItems(false);
                 form.setPublishModel(PublishModel.open);
                 form.setSubscribe(true);
 
@@ -177,23 +177,33 @@ public class NodesList {
                 }
             }
         });
+        tDescr.addHyperlinkListener(new HyperlinkListener() {
+            @Override
+            public void hyperlinkUpdate(HyperlinkEvent e) {
+                if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+                    if (Desktop.isDesktopSupported())
+                    {
+                        try {
+                            Desktop.getDesktop().browse(e.getURL().toURI());
+                        } catch (IOException e1) {
+                            e1.printStackTrace();
+                        } catch (URISyntaxException e1) {
+                            e1.printStackTrace();
+                        }
+                    }
+                }
+            }
+        });
     }
 
     private void loadNewsItem(String id) {
         String node = tNodeName.getText() ;
-        //            LeafNode n = jabber.pmanager.getNode(node);
-//            Collection<String> ids = new ArrayList<String>(1);
-//            ids.add(id);
-//            List<? extends Item> items = n.getItems(ids);
-//            for (Item i: items){
-//                NewsItem newsItem = new NewsItem(i.toXML());
-//
-//                tTitle.setText(newsItem.getTitle());
-//                tLink.setText(newsItem.getLink());
-//                tDescr.setText(newsItem.getDescription());
-//            }
         Feed f = feeds.get(node);
         IRss n = f.getItems().get(id);
+
+        f.setReaded(id);
+
+        loadPosts(node);
 
         tTitle.setText(n.getTitle());
         tLink.setText(n.getLink());
@@ -209,6 +219,12 @@ public class NodesList {
         for (Subscription s : subs){
             if (s.getNode().equals(leaf.getId())){
                 Feed feed = new Feed(s,jabber);
+                feed.addNewsHandlers(new NewsArrivedEvent() {
+                    @Override
+                    public void HandleNews(String feedID) {
+                        loadPosts(feedID);
+                    }
+                });
                 feeds.put( feed.getName(),feed);
             }
         }
@@ -218,26 +234,12 @@ public class NodesList {
             model.addElement(str);
         }
         lNodes.setModel(model);
-
-//        leaf.addItemEventListener(new ItemEventListener() {
-//            @Override
-//            public void handlePublishedItems(ItemPublishEvent itemPublishEvent) {
-//                loadPosts(leaf.getId());
-//            }
-//        });
-//
-//        loadSubscriptions();
     }
 
     private void loadPosts(String node) {
         DefaultListModel model = new DefaultListModel();
         Feed f = feeds.get(node);
-        f.addNewsHandlers(new NewsArrivedEvent() {
-            @Override
-            public void HandleNews(String from) {
-                loadPosts(from);
-            }
-        });
+
         for (String s: f.getItem_names())
         {
             model.addElement(s);
@@ -247,12 +249,8 @@ public class NodesList {
 
     public void loadSubscriptions() throws ParserConfigurationException, IOException, SAXException, TransformerException {
         try {
-            //List<Affiliation> list =  jabber.pmanager.getAffiliations();
-
-            // Get the pubsub features that are supported
-            DiscoverItems discoverItems = jabber.pmanager.discoverNodes(null);
-
-
+            //Search available nodes
+            //DiscoverItems discoverItems = jabber.pmanager.discoverNodes(null);
 
             List<Subscription> subscriptions = jabber.pmanager.getSubscriptions();
 

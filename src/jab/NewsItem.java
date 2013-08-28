@@ -99,11 +99,15 @@ public class NewsItem implements IRss {
 
     @Override
     public String getTitle() {
+        if (unread){
+            return "<html><body><b>" +title + "</b></body></html>";
+        }
         return title;
     }
 
     @Override
     public String getLink() {
+
         return link;
     }
 
@@ -124,7 +128,12 @@ public class NewsItem implements IRss {
 
     @Override
     public boolean getUnread() {
-        return false;  //To change body of implemented methods use File | Settings | File Templates.
+        return unread;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void setUnread(boolean state) {
+        this.unread = state;
     }
 
     private boolean unread;

@@ -1,7 +1,12 @@
 package jab;
 
+import org.jivesoftware.smack.Chat;
+import org.jivesoftware.smack.ChatManagerListener;
+import org.jivesoftware.smack.MessageListener;
 import org.jivesoftware.smack.XMPPException;
 import org.jivesoftware.smack.packet.DefaultPacketExtension;
+import org.jivesoftware.smack.packet.Message;
+import org.jivesoftware.smack.packet.PacketExtension;
 import org.jivesoftware.smackx.packet.DiscoverItems;
 import org.jivesoftware.smackx.pubsub.*;
 import org.jivesoftware.smackx.pubsub.listener.ItemEventListener;
@@ -34,7 +39,6 @@ public class Feed {
 
         LeafNode leaf = this.jabber.pmanager.getNode(this.name);
 
-//        leaf.subscribe(this.jabber.getJid());
         leaf.addItemEventListener(new ItemEventListener() {
             @Override
             public void handlePublishedItems(ItemPublishEvent itemPublishEvent) {
@@ -46,8 +50,8 @@ public class Feed {
                     try {
                         NewsItem newsItem = new NewsItem(itm.toXML(), itm.getId(), true);
                         String title = newsItem.getTitle();
-                        item_names.add(title);
-                        items.put(title,newsItem);
+                        item_names.add(0,title);
+                        items.put(title, newsItem);
 
                     } catch (ParserConfigurationException e) {
                         e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
@@ -66,9 +70,33 @@ public class Feed {
             }
         });
 
+        List<Message> offline_items = jabber.getOffline_messages();
 
-        //LeafNode n = jabber.pmanager.getNode(name);
+        for (Message s:offline_items){
+            EventElement event = (EventElement) s.getExtension("event","http://jabber.org/protocol/pubsub#event");
 
+            List<PacketExtension> eventExtensions = event.getExtensions();
+
+            for (PacketExtension item: eventExtensions){
+                ItemsExtension itemsExtension = (ItemsExtension) item;
+                List<? extends PacketExtension> list = itemsExtension.getItems();
+                for (PacketExtension i: list){
+                    Item offline_item = (Item) i;
+                    NewsItem newsItem = new NewsItem(offline_item.toXML(), offline_item.getId(), true);
+                    String title = newsItem.getTitle();
+                    item_names.add(title);
+                    items.put(title, newsItem);
+                }
+            }
+        }
+
+        loadPersistent(leaf);
+
+
+        me = this;
+    }
+
+    private void loadPersistent(LeafNode leaf) throws XMPPException, ParserConfigurationException, IOException, SAXException, TransformerException {
         DiscoverItems nodeItems = leaf.discoverItems();
         Iterator<DiscoverItems.Item> itr = nodeItems.getItems();
 
@@ -81,7 +109,7 @@ public class Feed {
 
             List<Item> its = leaf.getItems(ids);
             for (Object ii: its){
-                if(ii.getClass().equals(org.jivesoftware.smackx.pubsub.PayloadItem.class)){
+                if(ii.getClass().equals(PayloadItem.class)){
                     NewsItem newsItem = new NewsItem( ((Item) ii).toXML(), ((Item) ii).getId(), false);
                     String title = newsItem.getTitle();
                     item_names.add(title);
@@ -96,9 +124,6 @@ public class Feed {
 //                }
             }
         }
-
-
-        me = this;
     }
 
     public String getName() {
@@ -122,6 +147,18 @@ public class Feed {
 
     public void addNewsHandlers(NewsArrivedEvent newsHandler) {
         this.newsHandlers.add(newsHandler);
+    }
+
+    public void setReaded(String item_name){
+        NewsItem itm = (NewsItem) items.get(item_name);
+        itm.setUnread(false);
+        int item_index = item_names.indexOf(item_name);
+        item_names.remove(item_index);
+        item_names.add(item_index,itm.getTitle());
+
+        items.remove(item_name);
+        items.put(itm.getTitle(),itm);
+
     }
 
     private List<NewsArrivedEvent> newsHandlers;
