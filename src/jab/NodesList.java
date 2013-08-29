@@ -46,9 +46,14 @@ public class NodesList {
                             new SimplePayload(
                                     "post",
                                     "pubsub:" + tNodeName.getText() + ":post",
-                                    "<post xmlns='pubsub:" + tNodeName.getText() + ":post'><title>Lord of the Rings</title>"
-                                            + tLink.getText()
-                                            + "</post>"));
+                                    "<post xmlns='pubsub:" + tNodeName.getText() + ":post'>" +
+                                            "<title>" + tTitle.getText() + "</title>"+
+                                            "<author>" //+ author.replaceAll( "&([^;]+(?!(?:\\w|;)))", "&amp;$1" )
+                                            + "</author> " +
+                                            "<link>" + tLink.getText() + "</link>" +
+                                            "<pDate>"+ new Date(System.currentTimeMillis()).toString()  +"</pDate> " +
+                                            "<description>" + tDescr.getText() + "</description> " +
+                                            "</post>"));
 
                     myNode.send(p);
 
@@ -117,8 +122,7 @@ public class NodesList {
                 DefaultListModel dlm = (DefaultListModel) lPosts.getModel();
                 ListSelectionModel lsm = lPosts.getSelectionModel();
 
-                if(!lsm.isSelectionEmpty())
-                {
+                if (!lsm.isSelectionEmpty()) {
                     String id = dlm.get(lsm.getMinSelectionIndex()).toString();
                     loadNewsItem(id);
                 }
@@ -178,8 +182,7 @@ public class NodesList {
             @Override
             public void hyperlinkUpdate(HyperlinkEvent e) {
                 if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
-                    if (Desktop.isDesktopSupported())
-                    {
+                    if (Desktop.isDesktopSupported()) {
                         try {
                             Desktop.getDesktop().browse(e.getURL().toURI());
                         } catch (IOException e1) {
@@ -188,6 +191,16 @@ public class NodesList {
                             e1.printStackTrace();
                         }
                     }
+                }
+            }
+        });
+        bUkeeper.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                try {
+                    jabber.sendMessage("drops@ukeeper.com","%p "+tLink.getText());
+                } catch (XMPPException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                 }
             }
         });
@@ -292,5 +305,8 @@ public class NodesList {
     private JButton bDelete;
     private JEditorPane tTitle;
     private JEditorPane tDescr;
+    private JToolBar tbStatus;
+    private JLabel lStatus;
+    private JButton bUkeeper;
     public JabberClient jabber;
 }

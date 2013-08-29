@@ -28,7 +28,7 @@ public class Feed {
 
 
 
-    public Feed(Subscription subscription, JabberClient jabber) throws XMPPException, ParserConfigurationException, TransformerException, SAXException, IOException {
+    public Feed(Subscription subscription, JabberClient jabber)  {
         this.name = subscription.getNode();
         this.jabber = jabber;
 
@@ -37,38 +37,44 @@ public class Feed {
         item_names = new ArrayList<String>();
         newsHandlers = new ArrayList<NewsArrivedEvent>();
 
-        LeafNode leaf = this.jabber.pmanager.getNode(this.name);
+        LeafNode leaf = null;
+        try {
+            leaf = this.jabber.pmanager.getNode(this.name);
+            leaf.addItemEventListener(new ItemEventListener() {
+                @Override
+                public void handlePublishedItems(ItemPublishEvent itemPublishEvent) {
+                    Collection<? extends Item> list = itemPublishEvent.getItems();
+                    unreadCounter+= list.size();
 
-        leaf.addItemEventListener(new ItemEventListener() {
-            @Override
-            public void handlePublishedItems(ItemPublishEvent itemPublishEvent) {
-                Collection<? extends Item> list = itemPublishEvent.getItems();
-                unreadCounter+= list.size();
+                    for(Item itm:list)
+                    {
+                        try {
+                            NewsItem newsItem = new NewsItem(itm.toXML(), itm.getId(), true);
+                            String title = newsItem.getTitle();
+                            item_names.add(0,title);
+                            items.put(title, newsItem);
 
-                for(Item itm:list)
-                {
-                    try {
-                        NewsItem newsItem = new NewsItem(itm.toXML(), itm.getId(), true);
-                        String title = newsItem.getTitle();
-                        item_names.add(0,title);
-                        items.put(title, newsItem);
+                        } catch (ParserConfigurationException e) {
+                            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                        } catch (IOException e) {
+                            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                        } catch (SAXException e) {
+                            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                        } catch (TransformerException e) {
+                            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                        }
+                    }
 
-                    } catch (ParserConfigurationException e) {
-                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                    } catch (IOException e) {
-                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                    } catch (SAXException e) {
-                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                    } catch (TransformerException e) {
-                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    for (NewsArrivedEvent event: newsHandlers){
+                        event.HandleNews(((Feed)me).getName());
                     }
                 }
+            });
+        } catch (XMPPException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
 
-                for (NewsArrivedEvent event: newsHandlers){
-                    event.HandleNews(((Feed)me).getName());
-                }
-            }
-        });
+
 
         List<Message> offline_items = jabber.getOffline_messages();
 
@@ -82,15 +88,38 @@ public class Feed {
                 List<? extends PacketExtension> list = itemsExtension.getItems();
                 for (PacketExtension i: list){
                     Item offline_item = (Item) i;
-                    NewsItem newsItem = new NewsItem(offline_item.toXML(), offline_item.getId(), true);
+                    NewsItem newsItem = null;
+                    try {
+                        newsItem = new NewsItem(offline_item.toXML(), offline_item.getId(), true);
+                    } catch (ParserConfigurationException e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    } catch (IOException e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    } catch (SAXException e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    } catch (TransformerException e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    }
                     String title = newsItem.getTitle();
-                    item_names.add(title);
+                    item_names.add(0,title);
                     items.put(title, newsItem);
                 }
             }
         }
 
-        loadPersistent(leaf);
+        try {
+            loadPersistent(leaf);
+        } catch (XMPPException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        } catch (IOException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        } catch (SAXException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        } catch (TransformerException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
 
 
         me = this;
