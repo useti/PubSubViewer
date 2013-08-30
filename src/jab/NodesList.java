@@ -133,8 +133,8 @@ public class NodesList {
             public void actionPerformed(ActionEvent actionEvent) {
 
                 try {
-                    LeafNode leaf = jabber.pmanager.getNode(tNodeName.getText());
-                    subscribe(leaf);
+                    String nodeName = tNodeName.getText();
+                    subscribe(nodeName);
                 } catch (XMPPException e) {
                     e.printStackTrace();
                 } catch (ParserConfigurationException e) {
@@ -204,6 +204,40 @@ public class NodesList {
                 }
             }
         });
+        bShowNodeList.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                NodeSelector dialog = new NodeSelector(jabber);
+                dialog.pack();
+                dialog.setVisible(true);
+                if(dialog.getAnswer()) {
+                    for(String s: dialog.getSelectedNodes())
+                    {
+                        if(feeds.get(s) == null)
+                        {
+                            try {
+                                subscribe(s);
+                            } catch (XMPPException e) {
+                                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                            } catch (ParserConfigurationException e) {
+                                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                            } catch (TransformerException e) {
+                                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                            } catch (SAXException e) {
+                                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                            } catch (IOException e) {
+                                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    private void subscribe(String nodeName) throws XMPPException, ParserConfigurationException, TransformerException, SAXException, IOException {
+        LeafNode leaf = jabber.pmanager.getNode(nodeName);
+        subscribe(leaf);
     }
 
     private void loadNewsItem(String id) {
@@ -295,7 +329,7 @@ public class NodesList {
     public JPanel pNodes;
     private JList lNodes;
     private JButton bCreate;
-    private JButton button1;
+    private JButton bShowNodeList;
     private JButton button2;
     private JTextField tNodeName;
     private JEditorPane tLink;

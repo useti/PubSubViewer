@@ -86,23 +86,30 @@ public class Feed {
             for (PacketExtension item: eventExtensions){
                 ItemsExtension itemsExtension = (ItemsExtension) item;
                 List<? extends PacketExtension> list = itemsExtension.getItems();
-                for (PacketExtension i: list){
-                    Item offline_item = (Item) i;
-                    NewsItem newsItem = null;
-                    try {
-                        newsItem = new NewsItem(offline_item.toXML(), offline_item.getId(), true);
-                    } catch (ParserConfigurationException e) {
-                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                    } catch (IOException e) {
-                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                    } catch (SAXException e) {
-                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                    } catch (TransformerException e) {
-                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                if(itemsExtension.getNode().equals(name))
+                {
+                    for (PacketExtension i: list){
+
+                        try {
+                            Item offline_item = (Item) i;
+
+                                NewsItem newsItem = new NewsItem(offline_item.toXML(), offline_item.getId(), true);
+
+                                String title = newsItem.getTitle();
+                                item_names.add(0,title);
+                                items.put(title, newsItem);
+
+                        } catch (ParserConfigurationException e) {
+                            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                        } catch (IOException e) {
+                            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                        } catch (SAXException e) {
+                            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                        } catch (TransformerException e) {
+                            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                        }
+
                     }
-                    String title = newsItem.getTitle();
-                    item_names.add(0,title);
-                    items.put(title, newsItem);
                 }
             }
         }

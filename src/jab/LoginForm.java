@@ -8,6 +8,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -25,6 +26,9 @@ public class LoginForm {
     private JPasswordField fPassword;
     private JTextField fLogin;
     private JCheckBox chbSave;
+    private JPanel pHeader;
+    private JToolBar tbStatus;
+    private JLabel lError;
     private JabberClient jabber;
     public JFrame frame;
 
@@ -48,59 +52,7 @@ public class LoginForm {
         bLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                String pwd =  new String(fPassword.getPassword()); //fPassword.getText();
-                String log = fLogin.getText();
-                jabber = JabberClient.newBuilder("xmpp.useti.ru")
-                .setPassword(pwd)
-                .setPort(5222)
-                .setUser(log)
-                //.setService(params.get("jservice").trim())
-                .build();
-                jabber.setSASLAuthenticationEnabled(true);
-                jabber.setSASLPlain();
-                jabber.setSelfSignedCertificateEnabled(true);
-
-                try {
-                    jabber.connect();
-                } catch (XMPPException e) {
-                    e.printStackTrace();
-                }
-
-                if (chbSave.isSelected())
-                {
-                    config.setProperty("jid",log);
-                    config.setProperty("pwd",pwd);
-                }
-
-                config.setProperty("saved", String.format("%s", chbSave.isSelected()));
-
-                try {
-                    config.store(new FileOutputStream("config.properties"), null);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                JFrame nf = new JFrame("NodesList");
-                NodesList nl = new NodesList();
-                nl.jabber = jabber;
-                nf.setContentPane(nl.pNodes);
-                nf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                nf.pack();
-                nf.setVisible(true);
-
-                frame.setVisible(false);
-
-                try {
-                    nl.loadSubscriptions();
-                } catch (ParserConfigurationException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (SAXException e) {
-                    e.printStackTrace();
-                } catch (TransformerException e) {
-                    e.printStackTrace();
-                }
+                login();
             }
         });
 
@@ -118,6 +70,77 @@ public class LoginForm {
                 }
             }
         });
+
+        p.registerKeyboardAction(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                //onCancel();
+            }
+        }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+        p.registerKeyboardAction(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                login();
+            }
+        }, KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    }
+
+    private void login() {
+        String pwd =  new String(fPassword.getPassword()); //fPassword.getText();
+        String log = fLogin.getText();
+        lError.setVisible(false);
+        jabber = JabberClient.newBuilder("xmpp.useti.ru")
+        .setPassword(pwd)
+        .setPort(5222)
+        .setUser(log)
+        //.setService(params.get("jservice").trim())
+        .build();
+        jabber.setSASLAuthenticationEnabled(true);
+        jabber.setSASLPlain();
+        jabber.setSelfSignedCertificateEnabled(true);
+
+        try {
+            jabber.connect();
+        } catch (XMPPException e) {
+            lError.setVisible(true);
+            e.printStackTrace();
+            return;
+        }
+
+        if (chbSave.isSelected())
+        {
+            config.setProperty("jid",log);
+            config.setProperty("pwd",pwd);
+        }
+
+        config.setProperty("saved", String.format("%s", chbSave.isSelected()));
+
+        try {
+            config.store(new FileOutputStream("config.properties"), null);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        JFrame nf = new JFrame("NodesList");
+        NodesList nl = new NodesList();
+        nl.jabber = jabber;
+        nf.setContentPane(nl.pNodes);
+        nf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        nf.pack();
+        nf.setVisible(true);
+
+        frame.setVisible(false);
+
+        try {
+            nl.loadSubscriptions();
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (TransformerException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {
