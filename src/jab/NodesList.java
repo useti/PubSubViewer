@@ -233,6 +233,41 @@ public class NodesList {
                 }
             }
         });
+        bJuick.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                MsgForm dialog = new MsgForm();
+                dialog.pack();
+                dialog.setMessageText(String.format("%s - %s",tTitle.getText(),tLink.getText()));
+                dialog.setVisible(true);
+                if (dialog.getAnswer()){
+                    try {
+                        jabber.sendMessage("juick@juick.com",dialog.getMessageText());
+                    } catch (XMPPException e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    }
+                }
+            }
+        });
+        bUnsub.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String feed_id = tNodeName.getText();
+                if(feeds.get(feed_id)!=null){
+                    try {
+                        feeds.get(feed_id).Unsubscribe();
+                    } catch (XMPPException e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    }
+                    feeds.remove(feed_id);
+                    DefaultListModel model = new DefaultListModel();
+                    for (String s : feeds.keySet()){
+                        model.addElement(s);
+                    }
+                    lNodes.setModel(model);
+                }
+            }
+        });
     }
 
     private void subscribe(String nodeName) throws XMPPException, ParserConfigurationException, TransformerException, SAXException, IOException {
@@ -262,11 +297,14 @@ public class NodesList {
 
         for (Subscription s : subs){
             if (s.getNode().equals(leaf.getId())){
-                Feed feed = new Feed(s,jabber);
+                final Feed feed = new Feed(s,jabber);
                 feed.addNewsHandlers(new NewsArrivedEvent() {
                     @Override
                     public void HandleNews(String feedID) {
-                        loadPosts(feedID);
+                        String msg = String.format("Added %s new items to feed %s",feed.getUnreadCounter(),feed.getName());
+                        lStatus.setText(msg);
+                        if(tNodeName.getText().equals(feed.getName())){
+                            loadPosts(feed.getName());}
                     }
                 });
                 feeds.put( feed.getName(),feed);
@@ -300,11 +338,14 @@ public class NodesList {
 
             DefaultListModel model = new DefaultListModel();
             for (Subscription s: subscriptions){
-                Feed f= new Feed(s,jabber);
+                final Feed f= new Feed(s,jabber);
                 f.addNewsHandlers(new NewsArrivedEvent() {
                     @Override
                     public void HandleNews(String from) {
-                        loadPosts(from);
+                        String msg = String.format("Added %s new items to feed %s",f.getUnreadCounter(),f.getName());
+                        lStatus.setText(msg);
+                        if(tNodeName.getText().equals(f.getName())){
+                            loadPosts(f.getName());}
                     }
                 });
                 model.addElement(f.getName());
@@ -330,7 +371,7 @@ public class NodesList {
     private JList lNodes;
     private JButton bCreate;
     private JButton bShowNodeList;
-    private JButton button2;
+    private JButton bUnsub;
     private JTextField tNodeName;
     private JEditorPane tLink;
     private JButton bPublish;
@@ -342,5 +383,6 @@ public class NodesList {
     private JToolBar tbStatus;
     private JLabel lStatus;
     private JButton bUkeeper;
+    private JButton bJuick;
     public JabberClient jabber;
 }

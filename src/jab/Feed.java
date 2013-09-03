@@ -1,10 +1,6 @@
 package jab;
 
-import org.jivesoftware.smack.Chat;
-import org.jivesoftware.smack.ChatManagerListener;
-import org.jivesoftware.smack.MessageListener;
 import org.jivesoftware.smack.XMPPException;
-import org.jivesoftware.smack.packet.DefaultPacketExtension;
 import org.jivesoftware.smack.packet.Message;
 import org.jivesoftware.smack.packet.PacketExtension;
 import org.jivesoftware.smackx.packet.DiscoverItems;
@@ -26,7 +22,29 @@ import java.util.*;
  */
 public class Feed {
 
+    @Override
+    public String toString() {
+        return "Feed{" +
+                "name='" + name + '\'' +
+                ", jabber=" + jabber +
+                ", items=" + items +
+                ", item_names=" + item_names +
+                ", newsHandlers=" + newsHandlers +
+                ", me=" + me +
+                ", unreadCounter=" + unreadCounter +
+                '}';
+    }
 
+    public void Unsubscribe() throws XMPPException {
+        List<Subscription> subscriptions = jabber.pmanager.getSubscriptions();
+        for (Subscription s: subscriptions){
+            if(s.getNode().equals(name))
+            {
+                LeafNode leafNode = jabber.pmanager.getNode(this.name);
+                leafNode.unsubscribe(jabber.getJid(),s.getId());
+            }
+        }
+    }
 
     public Feed(Subscription subscription, JabberClient jabber)  {
         this.name = subscription.getNode();
