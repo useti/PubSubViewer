@@ -11,6 +11,7 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.util.*;
 
 /**
@@ -46,13 +47,16 @@ public class Feed {
         }
     }
 
-    public Feed(Subscription subscription, JabberClient jabber)  {
+
+
+    public Feed(Subscription subscription, JabberClient jabber) throws NoSuchAlgorithmException {
         this.name = subscription.getNode();
         this.jabber = jabber;
 
-        items = new HashMap<String, IRss>();
+        items = new Hashtable<String, IRss>();
 
         item_names = new ArrayList<String>();
+        item_names_set = new Hashtable<String, String>();
         newsHandlers = new ArrayList<NewsArrivedEvent>();
 
         LeafNode leaf = null;
@@ -62,15 +66,20 @@ public class Feed {
                 @Override
                 public void handlePublishedItems(ItemPublishEvent itemPublishEvent) {
                     Collection<? extends Item> list = itemPublishEvent.getItems();
-                    unreadCounter+= list.size();
-
                     for(Item itm:list)
                     {
                         try {
                             NewsItem newsItem = new NewsItem(itm.toXML(), itm.getId(), true);
                             String title = newsItem.getTitle();
-                            item_names.add(0,title);
-                            items.put(title, newsItem);
+                            String title_hash = newsItem.getTitleHash();
+                            String stored_title = item_names_set.get(title_hash);
+                            if (stored_title == null)
+                            {
+                                item_names_set.put(title_hash, title);
+                                item_names.add(0,title);
+                                items.put(title, newsItem);
+                                unreadCounter++;
+                            }
 
                         } catch (ParserConfigurationException e) {
                             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
@@ -79,6 +88,10 @@ public class Feed {
                         } catch (SAXException e) {
                             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                         } catch (TransformerException e) {
+                            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                        } catch (NoSuchAlgorithmException e) {
+                            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                        } catch (CloneNotSupportedException e) {
                             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                         }
                     }
@@ -114,8 +127,15 @@ public class Feed {
                                 NewsItem newsItem = new NewsItem(offline_item.toXML(), offline_item.getId(), true);
 
                                 String title = newsItem.getTitle();
-                                item_names.add(0,title);
-                                items.put(title, newsItem);
+                                String title_hash = newsItem.getTitleHash();
+                                String stored_title = item_names_set.get(title_hash);
+                                if (stored_title == null)
+                                {
+                                    item_names_set.put(title_hash, title);
+                                    item_names.add(0, title);
+                                    items.put(title, newsItem);
+                                    unreadCounter++;
+                                }
 
                         } catch (ParserConfigurationException e) {
                             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
@@ -124,6 +144,8 @@ public class Feed {
                         } catch (SAXException e) {
                             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                         } catch (TransformerException e) {
+                            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                        } catch (CloneNotSupportedException e) {
                             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                         }
 
@@ -144,13 +166,15 @@ public class Feed {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         } catch (TransformerException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
 
 
         me = this;
     }
 
-    private void loadPersistent(LeafNode leaf) throws XMPPException, ParserConfigurationException, IOException, SAXException, TransformerException {
+    private void loadPersistent(LeafNode leaf) throws XMPPException, ParserConfigurationException, IOException, SAXException, TransformerException, NoSuchAlgorithmException, CloneNotSupportedException {
         DiscoverItems nodeItems = leaf.discoverItems();
         Iterator<DiscoverItems.Item> itr = nodeItems.getItems();
 
@@ -166,8 +190,15 @@ public class Feed {
                 if(ii.getClass().equals(PayloadItem.class)){
                     NewsItem newsItem = new NewsItem( ((Item) ii).toXML(), ((Item) ii).getId(), false);
                     String title = newsItem.getTitle();
-                    item_names.add(title);
-                    items.put(title,newsItem);
+                    String title_hash = newsItem.getTitleHash();
+                    String stored_title = item_names_set.get(title_hash);
+                    if (stored_title == null)
+                    {
+                        item_names_set.put(title_hash, title);
+                        item_names.add(0, title);
+                        items.put(title, newsItem);
+                        unreadCounter++;
+                    }
                 }
 //                else if (ii.getClass().equals(org.jivesoftware.smack.packet.DefaultPacketExtension.class)){
 //                    DefaultPacketExtension extension = (DefaultPacketExtension)ii;
@@ -187,32 +218,39 @@ public class Feed {
     private final String name;
     private JabberClient jabber;
 
-    public Map<String, IRss> getItems() {
+    public Dictionary<String, IRss> getItems() {
         return items;
     }
 
-    private Map<String,IRss> items;
+    private Dictionary<String,IRss> items;
 
     public List<String> getItem_names() {
         return item_names;
     }
 
     private List<String> item_names;
+    private Dictionary<String, String> item_names_set;
 
     public void addNewsHandlers(NewsArrivedEvent newsHandler) {
         this.newsHandlers.add(newsHandler);
     }
 
-    public void setReaded(String item_name){
+    public void setReaded(String item_name) throws CloneNotSupportedException {
         NewsItem itm = (NewsItem) items.get(item_name);
         itm.setUnread(false);
-        int item_index = item_names.indexOf(item_name);
-        item_names.remove(item_index);
-        item_names.add(item_index,itm.getTitle());
 
+        int item_num = item_names.indexOf(item_name);
+        String title_hash = itm.getTitleHash();
+        item_names_set.remove(title_hash);
+        item_names.remove(item_num);
         items.remove(item_name);
-        items.put(itm.getTitle(),itm);
 
+        item_names_set.put(title_hash, itm.getTitle());
+        item_names.add(item_num,itm.getTitle());
+        items.put(itm.getTitle(),itm);
+        unreadCounter--;
+        if (unreadCounter < 0)
+            unreadCounter = 0;
     }
 
     private List<NewsArrivedEvent> newsHandlers;

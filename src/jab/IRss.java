@@ -1,8 +1,5 @@
 package jab;
 
-import org.jivesoftware.smackx.pubsub.PayloadItem;
-
-import java.net.URL;
 import java.util.Date;
 
 /**

@@ -3,19 +3,13 @@ package jab;
 import org.htmlcleaner.CleanerProperties;
 import org.htmlcleaner.HtmlCleaner;
 import org.htmlcleaner.TagNode;
-import org.w3c.dom.*;
-import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.*;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.TransformerException;
 import java.io.IOException;
-import java.io.StringReader;
-import java.io.StringWriter;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 
 /**
@@ -26,9 +20,11 @@ import java.util.Date;
  * To change this template use File | Settings | File Templates.
  */
 public class NewsItem implements IRss {
-    public NewsItem(String xml, String id, boolean unread) throws ParserConfigurationException, IOException, SAXException, TransformerException {
+    public NewsItem(String xml, String id, boolean unread) throws ParserConfigurationException, IOException, SAXException, TransformerException, NoSuchAlgorithmException {
         this.id = id;
         this.unread = unread;
+
+        md = MessageDigest.getInstance("MD5");
 
         link = xml.substring(xml.indexOf("<link>"),xml.indexOf("</link>"));
         title = xml.substring(xml.indexOf("<title>"),xml.indexOf("</title>")).replace("<title>"," ");
@@ -58,6 +54,7 @@ public class NewsItem implements IRss {
     private String description;
     private String id;
     private String pDate;
+    private MessageDigest md;
 
     public String getId() {
         return id;
@@ -71,9 +68,16 @@ public class NewsItem implements IRss {
         return title;
     }
 
+    public String getTitleHash() throws CloneNotSupportedException {
+        md.update(title.getBytes());
+        MessageDigest tc1 = (MessageDigest) md.clone();
+        byte[] digest = tc1.digest();
+        String ret = new String(digest);
+        return ret;
+    }
+
     @Override
     public String getLink() {
-
         return link;
     }
 

@@ -16,6 +16,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.security.NoSuchAlgorithmException;
 import java.util.*;
 import java.util.List;
 
@@ -70,6 +71,8 @@ public class NodesList {
                     e.printStackTrace();
                 } catch (IOException e) {
                     e.printStackTrace();
+                } catch (NoSuchAlgorithmException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                 }
             }
         });
@@ -99,6 +102,8 @@ public class NodesList {
                     e.printStackTrace();
                 } catch (TransformerException e) {
                     e.printStackTrace();
+                } catch (NoSuchAlgorithmException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                 }
             }
         });
@@ -124,7 +129,11 @@ public class NodesList {
 
                 if (!lsm.isSelectionEmpty()) {
                     String id = dlm.get(lsm.getMinSelectionIndex()).toString();
-                    loadNewsItem(id);
+                    try {
+                        loadNewsItem(id);
+                    } catch (CloneNotSupportedException e1) {
+                        e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    }
                 }
             }
         });
@@ -145,6 +154,8 @@ public class NodesList {
                     e.printStackTrace();
                 } catch (TransformerException e) {
                     e.printStackTrace();
+                } catch (NoSuchAlgorithmException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                 }
 
             }
@@ -227,6 +238,8 @@ public class NodesList {
                                 e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                             } catch (IOException e) {
                                 e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                            } catch (NoSuchAlgorithmException e) {
+                                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                             }
                         }
                     }
@@ -270,12 +283,12 @@ public class NodesList {
         });
     }
 
-    private void subscribe(String nodeName) throws XMPPException, ParserConfigurationException, TransformerException, SAXException, IOException {
+    private void subscribe(String nodeName) throws XMPPException, ParserConfigurationException, TransformerException, SAXException, IOException, NoSuchAlgorithmException {
         LeafNode leaf = jabber.pmanager.getNode(nodeName);
         subscribe(leaf);
     }
 
-    private void loadNewsItem(String id) {
+    private void loadNewsItem(String id) throws CloneNotSupportedException {
         String node = tNodeName.getText() ;
         Feed f = feeds.get(node);
         IRss n = f.getItems().get(id);
@@ -287,10 +300,11 @@ public class NodesList {
         tTitle.setText(n.getTitle());
         tLink.setText(n.getLink());
         tDescr.setText(n.getDescription());
+        tDescr.scrollRectToVisible(new Rectangle(1,1,1,1));
 
     }
 
-    private void subscribe(final LeafNode leaf) throws XMPPException, ParserConfigurationException, TransformerException, SAXException, IOException {
+    private void subscribe(final LeafNode leaf) throws XMPPException, ParserConfigurationException, TransformerException, SAXException, IOException, NoSuchAlgorithmException {
         leaf.subscribe(jabber.getJid());
 
         List<Subscription> subs = jabber.pmanager.getSubscriptions();
@@ -329,7 +343,7 @@ public class NodesList {
         lPosts.setModel(model);
     }
 
-    public void loadSubscriptions() throws ParserConfigurationException, IOException, SAXException, TransformerException {
+    public void loadSubscriptions() throws ParserConfigurationException, IOException, SAXException, TransformerException, NoSuchAlgorithmException {
         try {
             //Search available nodes
             //DiscoverItems discoverItems = jabber.pmanager.discoverNodes(null);
