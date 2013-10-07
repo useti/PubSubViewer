@@ -1,5 +1,4 @@
 import jab.LoginForm;
-import org.jivesoftware.smack.XMPPConnection;
 import org.jivesoftware.smack.XMPPException;
 
 import javax.swing.*;
@@ -8,7 +7,7 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) throws XMPPException {
-        XMPPConnection.DEBUG_ENABLED = true;
+//        XMPPConnection.DEBUG_ENABLED = true;
         new Main();
 //        System.out.println("Hello World!");
     }

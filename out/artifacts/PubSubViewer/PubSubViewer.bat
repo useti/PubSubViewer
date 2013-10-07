@@ -1,0 +1,1 @@
+java.exe -jar PubSubViewer.jar
