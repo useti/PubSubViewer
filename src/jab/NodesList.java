@@ -281,6 +281,27 @@ public class NodesList {
                 }
             }
         });
+        bUpdate.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                try {
+                    feeds.clear();
+                    DefaultListModel listModel = (DefaultListModel) lNodes.getModel();
+                    listModel.removeAllElements();
+                    loadSubscriptions();
+                } catch (ParserConfigurationException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                } catch (IOException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                } catch (SAXException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                } catch (TransformerException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                } catch (NoSuchAlgorithmException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                }
+            }
+        });
     }
 
     private void subscribe(String nodeName) throws XMPPException, ParserConfigurationException, TransformerException, SAXException, IOException, NoSuchAlgorithmException {
@@ -398,5 +419,10 @@ public class NodesList {
     private JLabel lStatus;
     private JButton bUkeeper;
     private JButton bJuick;
+    private JButton bUpdate;
     public JabberClient jabber;
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
+    }
 }
