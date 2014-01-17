@@ -286,8 +286,8 @@ public class NodesList {
             public void actionPerformed(ActionEvent actionEvent) {
                 try {
                     feeds.clear();
-                    DefaultListModel listModel = (DefaultListModel) lNodes.getModel();
-                    listModel.removeAllElements();
+//                    DefaultListModel listModel = (DefaultListModel) lNodes.getModel();
+//                    listModel.removeAllElements();
                     loadSubscriptions();
                 } catch (ParserConfigurationException e) {
                     e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
