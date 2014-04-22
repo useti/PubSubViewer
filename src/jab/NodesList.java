@@ -420,6 +420,8 @@ public class NodesList {
     private JButton bUkeeper;
     private JButton bJuick;
     private JButton bUpdate;
+    private JTabbedPane tabbedPane1;
+    private JPanel Default;
     public JabberClient jabber;
 
     private void createUIComponents() {
